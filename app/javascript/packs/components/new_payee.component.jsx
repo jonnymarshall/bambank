@@ -3,30 +3,30 @@ import React, { Component } from 'react';
 const NewPayee = ({onClick}) => {
   
   return(
-    <section class="section c-new-transfer">
-      <div class="container">
-        <h1 class="title is-5">New payee</h1>
-        <div class="field">
-          <div class="user-details is-flex">
-            <figure class="image is-64x64 c-transaction-c-contact--avatar">
-              <img class="is-rounded c-contact--avatar" src="https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"></img>
+    <section className="section c-new-transfer">
+      <div className="container">
+        <h1 className="title is-5">New payee</h1>
+        <div className="field">
+          <div className="user-details is-flex">
+            <figure className="image is-64x64 c-transaction-c-contact--avatar">
+              <img className="is-rounded c-contact--avatar" src="https://img.icons8.com/metro/1600/plus-math.png"></img>
             </figure>
-            <div class="c-new-transfer--name">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Text input"></input>
+            <div className="c-new-transfer--name">
+              <label className="label">Email</label>
+              <div className="control">
+                <input className="input" type="text" placeholder="Text input"></input>
               </div>
             </div>
           </div>
-          <p class="help is-danger">Email is invalid</p>
+          <p className="help is-danger">Email is invalid</p>
         </div>
         
-        <div class="field is-grouped">
-          <div class="control">
-            <button class="button is-primary">Add payee</button>
+        <div className="field is-grouped">
+          <div className="control">
+            <button className="button is-primary">Add payee</button>
           </div>
-          <div class="control">
-            <button class="button is-light" onClick={() => onClick()}>Cancel</button>
+          <div className="control">
+            <button className="button is-light" onClick={() => onClick()}>Cancel</button>
           </div>
         </div>
       </div>

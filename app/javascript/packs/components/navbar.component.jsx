@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 
 const Navbar = () => {
   return(
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="../">
-            <span class="icon is-medium">
-              <i class="fas-piggy-bank"></i>
+    <nav className="navbar">
+      <div className="container">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="../">
+            <span className="icon is-medium">
+              <i className="fas-piggy-bank"></i>
             </span>
           </a>
-          <span class="navbar-burger burger" data-target="navbarMenu">
+          <span className="navbar-burger burger" data-target="navbarMenu">
             <span></span>
             <span></span>
             <span></span>
           </span>
         </div>
-        <div id="navbarMenu" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item is-active">Home</a>
-            <a class="navbar-item">Account</a>
-            <a class="navbar-item">Logout</a>
+        <div id="navbarMenu" className="navbar-menu">
+          <div className="navbar-end">
+            <a className="navbar-item is-active">Home</a>
+            <a className="navbar-item">Account</a>
+            <a className="navbar-item">Logout</a>
           </div>
         </div>
       </div>
