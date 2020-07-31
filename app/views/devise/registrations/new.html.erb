@@ -9,28 +9,31 @@
         <div class="column" id="sign_up_form" data-controller="password-validation">
           <h1 class="title">Sign up</h1>
           <div class="field">
-            <p class="control has-icons-left has-icons-right">
+            <label class="label">First name</label>
+            <p class="control">
               <%= f.text_field :first_name, autofocus: true, class: "input", placeholder: "First name" %>
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span>
             </p>
           </div>
           <div class="field">
-            <p class="control has-icons-left has-icons-right">
+            <label class="label">Email</label>
+            <p class="control has-icons-left">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email"%>
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
-              <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
+            </p>
+          </div>
+          <div class="field">
+          <label class="label">Avatar (Paste URL)</label>
+            <p class="control has-icons-left">
+              <%= f.text_field :avatar_url, autofocus: true, class: "input" %>
+              <span class="icon is-small is-left">
+                <i class="far fa-image"></i>
               </span>
             </p>
           </div>
           <div class="field">
+          <label class="label">Password</label>
             <p class="control has-icons-left">
               <%= f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "Password" %>
               <span class="icon is-small is-left">
@@ -39,6 +42,7 @@
             </p>
           </div>
           <div class="field">
+          <label class="label">Confirm Password</label>
             <p class="control has-icons-left">
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: "Confirm password" %>
               <span class="icon is-small is-left">

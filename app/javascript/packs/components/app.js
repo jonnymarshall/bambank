@@ -19,7 +19,7 @@ class App extends React.Component {
       },
       currentUser: {
         id: 0,
-        firstName: "Jonny",
+        first_name: "Jonny",
         balance: 100.00,
         isFirstLogin: true
       },
@@ -131,7 +131,7 @@ class App extends React.Component {
 
   render() {
     const { payees, recentTransactions, newPayeeSelected, selectedPayee } = this.state
-    const { balance, isFirstLogin } = this.state.currentUser
+    const { balance, isFirstLogin, first_name } = this.state.currentUser
     const payee = payees.find(payee => payee.id == selectedPayee )
     const selectPayee = this.selectPayee.bind(this)
     const cancelNewPayment = this.cancelNewPayment.bind(this)
@@ -142,7 +142,7 @@ class App extends React.Component {
       <div className="App">
         {/* <Navbar/> */}
         <Balance balance={balance} />
-        { isFirstLogin && <Notification /> }
+        { isFirstLogin && <Notification name={first_name} /> }
         { payees && <Payees payees={payees} selectPayee={selectPayee} toggleNewPayee={toggleNewPayee} /> }
         { newPayeeSelected && <NewPayee onClick={toggleNewPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
