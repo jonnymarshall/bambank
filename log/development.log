@@ -180,3 +180,105 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 2478)
 
 
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2) LIMIT $3[0m  [["sender_id", 1], ["receiver_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2) LIMIT $3[0m  [["sender_id", 1], ["receiver_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2) LIMIT $3[0m  [["sender_id", 2], ["receiver_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2020-07-31 15:41:43 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.6ms | Allocations: 295)
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2114)
+
+
+Started GET "/" for ::1 at 2020-07-31 15:42:17 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1508)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 15:42:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 596)
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 3462)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-07-31 15:42:19 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 407)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 15:42:19 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1041)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: f7eea7252d9b0da451a4
+Version: webpack 4.44.1
+Time: 3995ms
+Built at: 07/31/2020 3:42:23 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+    js/hello_react-39eb0f22d439f082141b.js   1.05 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-39eb0f22d439f082141b.js.map   1.21 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  703 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+Entrypoint hello_react = js/hello_react-39eb0f22d439f082141b.js js/hello_react-39eb0f22d439f082141b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 18 hidden modules
+
+Completed 200 OK in 6375ms (Views: 6356.9ms | ActiveRecord: 4.0ms | Allocations: 41264)
+
+
+[Webpacker] Compilation failed:
+
+Completed 200 OK in 4708ms (Views: 4707.1ms | ActiveRecord: 0.0ms | Allocations: 8320)
+
+
+Started GET "/" for ::1 at 2020-07-31 15:42:31 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 1299)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 15:42:31 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 600)
+  Rendered /Users/jonny/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 27.7ms | ActiveRecord: 3.7ms | Allocations: 18348)
+
+
