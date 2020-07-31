@@ -6,16 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Transaction.destroy_all
+User.destroy_all
+
 User.create([
+  {
+    email: "hello@bambank.com",
+    password: "password",
+    first_name: "Bambank",
+    balance: 1000000
+  },
   {
     email: "john@example.com",
     password: "password",
-    first_name: "john"
+    first_name: "John"
   },
   {
     email: "bill@example.com",
     password: "password",
-    first_name: "bill"
+    first_name: "Bill"
   }
 ])
 

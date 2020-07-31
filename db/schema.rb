@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_132246) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "avatar_url"
-    t.boolean "bonus_redeemed"
+    t.boolean "bonus_redeemed", default: false
     t.float "balance"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
