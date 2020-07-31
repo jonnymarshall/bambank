@@ -11,6 +11,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      routing: {
+        csrfToken: null,
+        paths: {
+          transactionsIndex: "/transactions"
+        }
+      },
       currentUser: {
         id: 0,
         firstName: "Jonny",
@@ -65,30 +71,29 @@ class App extends React.Component {
         email: "jenna@example.com",
         avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
       }],
-      recentTransactions: [{
-        id: 1,
-        reference: "Golf trip",
-        date: "01/01/2001",
-        amount: -150.10,
-        payeeId: 1
-      },
-      {
-        id: 2,
-        reference: "Invoice payment",
-        date: "01/01/2001",
-        amount: 1050.00,
-        payeeId: 2
-      },
-      {
-        id: 3,
-        reference: "Sex party",
-        date: "01/01/2001",
-        amount: 500.00,
-        payeeId: 3
-      }],
+      recentTransactions: [],
       selectedPayee: false,
       newPayeeSelected: false
     }
+  }
+
+  componentDidMount() {
+    this.setState({csrfToken: document.head.querySelector("[name='csrf-token']").content})
+    this.fetchTransactions()
+    console.log(this.state)
+  }
+
+  async fetchTransactions() {
+    await fetch(this.state.routing.paths.transactionsIndex,
+      {
+        method: "GET",
+        headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
+          .then((response) => response.json())
+          .then((data) => {
+            data.data.forEach((transaction) => {
+              this.setState({recentTransactions: [...this.state.recentTransactions, transaction.attributes]})
+            })
+          })
   }
 
   selectPayee(payeeId) {
@@ -113,10 +118,6 @@ class App extends React.Component {
     this.setState({ newPayeeSelected: !this.state.newPayeeSelected})
   }
 
-  componentDidMount() {
-    console.log("hello")
-  }
-
   createNewPayment(recipientId, amount, reference) {
     const newPayment = {
       senderId: this.state.currentUser.id,
@@ -136,16 +137,16 @@ class App extends React.Component {
     const cancelNewPayment = this.cancelNewPayment.bind(this)
     const toggleNewPayee = this.toggleNewPayee.bind(this)
     const createNewPayment = this.createNewPayment.bind(this)
-    
+    const currentUserId = this.state.currentUser.id
     return (
       <div className="App">
-        <Navbar/>
+        {/* <Navbar/> */}
         <Balance balance={balance} />
         { isFirstLogin && <Notification /> }
         { payees && <Payees payees={payees} selectPayee={selectPayee} toggleNewPayee={toggleNewPayee} /> }
         { newPayeeSelected && <NewPayee onClick={toggleNewPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
-        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} /> }
+        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={currentUserId} /> }
       </div>
     )
   }
