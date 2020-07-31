@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Added gems
 gem 'devise'
+gem "bulma-rails", "~> 0.9.0"
+gem 'font-awesome-sass', '~> 5.13.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
