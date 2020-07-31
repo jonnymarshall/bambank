@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create([
+  {
+    email: "john@example.com",
+    password: "password",
+    first_name: "john"
+  },
+  {
+    email: "bill@example.com",
+    password: "password",
+    first_name: "bill"
+  }
+])
+
+Transaction.create([
+  {
+    sender: User.first,
+    receiver: User.last,
+    amount: 10.00,
+    reference: "party"
+  }
+])
