@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   respond_to :html, :json
+  protect_from_forgery with: :null_session
   before_action :authenticate_user!
 
   def index
