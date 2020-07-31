@@ -69,8 +69,8 @@ User.create([
 
 Transaction.create([
   {
-    sender: User.find_by(email: "john@example.com"),
-    receiver: User.last,
+    sender: User.find_by(email: "kyle@example.com"),
+    receiver: User.find_by(email: "bella@example.com"),
     amount: 10.00,
     reference: "party"
   }

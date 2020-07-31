@@ -1,6 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :sender, class_name: "User", foreign_key: :sender_id
   belongs_to :receiver, class_name: "User", foreign_key: :receiver_id
+  after_create :adjust_balances
 
   scope :for_user, ->(user) { where(sender: user).or(where(receiver: user)) }
 
@@ -20,5 +21,12 @@ class Transaction < ApplicationRecord
       amount: amount,
       reference: reference
     )
+  end
+
+  private
+
+  def adjust_balances
+    self.sender.adjust_balance("deduct", amount)
+    self.receiver.adjust_balance("add", amount)
   end
 end

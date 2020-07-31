@@ -6008,3 +6008,582 @@ Processing by TransactionsController#index as JSON
 Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 5342)
 
 
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:39:40.278849"], ["updated_at", "2020-07-31 21:39:40.278849"], ["sender_id", 17], ["receiver_id", 24]]
+  [1m[35m (5.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:46:07.802006"], ["updated_at", "2020-07-31 21:46:07.802006"], ["sender_id", 17], ["receiver_id", 24]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:47:06.619966"], ["updated_at", "2020-07-31 21:47:06.619966"], ["sender_id", 17], ["receiver_id", 24]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.8ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.7ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 22]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$lMCWLrc0ml4ZWWSpu3IQvewg1Zk1hRyD/Wf3iLtYCM4iTkL.xvYhi"], ["created_at", "2020-07-31 21:50:03.276535"], ["updated_at", "2020-07-31 21:50:03.276535"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:50:03.280242"], ["updated_at", "2020-07-31 21:50:03.280242"], ["sender_id", 25], ["receiver_id", 25]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$OHPTrfhrUq45xS0J1neXBelVMMbEeFx0Z38ZHYbCT6H70zyc4qAuS"], ["created_at", "2020-07-31 21:50:19.276156"], ["updated_at", "2020-07-31 21:50:19.276156"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:50:19.289401"], ["updated_at", "2020-07-31 21:50:19.289401"], ["sender_id", 26], ["receiver_id", 26]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$3.eJJ0QQYtYJY07R0dNCMucc6VvruaAt9RpqXAEXDfHvsIUd7KyXq"], ["created_at", "2020-07-31 21:50:41.057271"], ["updated_at", "2020-07-31 21:50:41.057271"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:50:41.059308"], ["updated_at", "2020-07-31 21:50:41.059308"], ["sender_id", 26], ["receiver_id", 27]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$XugtGjG7dlgwY47Gz6svq.jt0d10AotOzcjya32NLOQdP3br8n/ge"], ["created_at", "2020-07-31 21:51:33.936627"], ["updated_at", "2020-07-31 21:51:33.936627"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:51:33.941964"], ["updated_at", "2020-07-31 21:51:33.941964"], ["sender_id", 28], ["receiver_id", 28]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:52:13.125335"], ["balance", 999900.0], ["id", 28]]
+  ↳ (byebug):1:in `adjust_balance'
+  [1m[35m (8.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$YvHzgX526qtnXhYdy3xdBeg.pWrCkeZzo/ljFKi2rCqOKaQlqIii6"], ["created_at", "2020-07-31 21:52:48.490494"], ["updated_at", "2020-07-31 21:52:48.490494"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:52:48.500130"], ["updated_at", "2020-07-31 21:52:48.500130"], ["sender_id", 29], ["receiver_id", 29]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:52:48.502038"], ["id", 29]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:52:48.503373"], ["balance", 1000100.0], ["id", 29]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$ZanqDpmj/gqyS0RWsrBpd.UwrrWb5O454A4pHqnGlbPstITt5mfay"], ["created_at", "2020-07-31 21:52:48.696497"], ["updated_at", "2020-07-31 21:52:48.696497"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:52:48.698585"], ["updated_at", "2020-07-31 21:52:48.698585"], ["sender_id", 29], ["receiver_id", 30]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 1000000.0], ["updated_at", "2020-07-31 21:52:48.699890"], ["id", 29]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 29]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$qpvHHr.yKHe/buoszE/r6.ZT6BVi67NhZF7.Dwmg/wTwbhuKgN9Yu"], ["created_at", "2020-07-31 21:53:17.764896"], ["updated_at", "2020-07-31 21:53:17.764896"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:53:17.768909"], ["updated_at", "2020-07-31 21:53:17.768909"], ["sender_id", 31], ["receiver_id", 31]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:53:17.770267"], ["id", 31]]
+  ↳ app/models/user.rb:26:in `adjust_balance'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:54:15.781277"], ["balance", 1000100.0], ["id", 31]]
+  ↳ (byebug):1:in `adjust_balance'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:54:18.359715"], ["balance", 1000200.0], ["id", 31]]
+  ↳ app/models/user.rb:24:in `adjust_balance'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$ZBjAcmSb7OG5GwvVg63Tt.cNjfxvd2KA2uSl49UAL6Ges4wqCyGre"], ["created_at", "2020-07-31 21:54:18.572624"], ["updated_at", "2020-07-31 21:54:18.572624"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:54:18.574608"], ["updated_at", "2020-07-31 21:54:18.574608"], ["sender_id", 31], ["receiver_id", 32]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 1000100.0], ["updated_at", "2020-07-31 21:54:18.575735"], ["id", 31]]
+  ↳ app/models/user.rb:26:in `adjust_balance'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 32]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 31]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$kNBwXzlehzsd0CsuhLkVOOrJ5ikAiQrJmAzeTR8AQ0t4GhVLhF/4q"], ["created_at", "2020-07-31 21:55:26.857475"], ["updated_at", "2020-07-31 21:55:26.857475"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:26.861595"], ["updated_at", "2020-07-31 21:55:26.861595"], ["sender_id", 33], ["receiver_id", 33]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:55:26.863016"], ["id", 33]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:26.864398"], ["balance", 1000100.0], ["id", 33]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$H2kD0PVhBcNELscYtDTn9.w7xIhCdr59qoXKBjc8u/bT/EBQyCnWy"], ["created_at", "2020-07-31 21:55:27.059977"], ["updated_at", "2020-07-31 21:55:27.059977"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:27.062004"], ["updated_at", "2020-07-31 21:55:27.062004"], ["sender_id", 33], ["receiver_id", 34]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 1000000.0], ["updated_at", "2020-07-31 21:55:27.063137"], ["id", 33]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_development"[0m
+  [1m[35m (28.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_test"[0m
+  [1m[35m (127.4ms)[0m  [1m[35mCREATE DATABASE "bambank_development" ENCODING = 'unicode'[0m
+  [1m[35m (52.0ms)[0m  [1m[35mCREATE DATABASE "bambank_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5583818253845008275)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200731131023)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731131023"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToUser (20200731131246)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar_url" character varying DEFAULT 'https://utulsa.edu/wp-content/uploads/2018/08/generic-avatar-300x300.jpg'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "first_signin" boolean DEFAULT TRUE[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "balance" float DEFAULT 0.0[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731131246"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20200731131955)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "amount" float, "reference" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731131955"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddReferencesToTransaction (20200731132246)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "transactions" ADD "sender_id" bigint[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_sender_id" ON "transactions"  ("sender_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_aa3b5f8d6f"
+FOREIGN KEY ("sender_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "transactions" ADD "receiver_id" bigint[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_receiver_id" ON "transactions"  ("receiver_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_d261c16c42"
+FOREIGN KEY ("receiver_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731132246"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-31 21:55:44.289527"], ["updated_at", "2020-07-31 21:55:44.289527"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5583818253845008275)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$.IowBR83IYPJmR1chuwn/.9tRRGyDe1ZZ7jlG15JMJ7VAHOUmshTO"], ["created_at", "2020-07-31 21:55:44.567629"], ["updated_at", "2020-07-31 21:55:44.567629"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.7ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:44.577039"], ["updated_at", "2020-07-31 21:55:44.577039"], ["sender_id", 1], ["receiver_id", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:55:44.578839"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:44.580089"], ["balance", 1000100.0], ["id", 1]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$WKtFS.CSNshJloCR1dZobuR3cwl9aMjJb71tgvwHZi3A6o8XT6g6W"], ["created_at", "2020-07-31 21:55:44.773450"], ["updated_at", "2020-07-31 21:55:44.773450"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:44.775472"], ["updated_at", "2020-07-31 21:55:44.775472"], ["sender_id", 1], ["receiver_id", 2]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 1000000.0], ["updated_at", "2020-07-31 21:55:44.776597"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:44.777671"], ["balance", 100.0], ["id", 2]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sarah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sarah@example.com"], ["encrypted_password", "$2a$12$aa61nuDL/X4HL61mZMkRnujTddvMgC/FRR30fu/d2bBSI5jYHelI6"], ["created_at", "2020-07-31 21:55:44.970391"], ["updated_at", "2020-07-31 21:55:44.970391"], ["first_name", "Sarah"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fc52784-7a18-4d4d-9ccb-110a8d80a5bb/d6mtt55-f9b343d7-8f79-40d9-8c5c-401bc3ce8d03.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi84ZmM1Mjc4NC03YTE4LTRkNGQtOWNjYi0xMTBhOGQ4MGE1YmIvZDZtdHQ1NS1mOWIzNDNkNy04Zjc5LTQwZDktOGM1Yy00MDFiYzNjZThkMDMuanBnIn1dXX0.6-3ihZXl6Fxd6GnP4DHwAjiH1S9i4E3xeyKB5uR40gA"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:44.972678"], ["updated_at", "2020-07-31 21:55:44.972678"], ["sender_id", 1], ["receiver_id", 3]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:55:44.973852"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:44.974945"], ["balance", 100.0], ["id", 3]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "samantha@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "samantha@example.com"], ["encrypted_password", "$2a$12$1MX0xRx.uG0JVeRP5Mbya.UzlRPAFtZcm5wRdgkIqW3LmJOk8Oequ"], ["created_at", "2020-07-31 21:55:45.170513"], ["updated_at", "2020-07-31 21:55:45.170513"], ["first_name", "Samantha"], ["avatar_url", "https://static.boredpanda.com/blog/wp-content/uploads/2017/03/seol-58d1246b4f584-png__880.jpg"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:45.172480"], ["updated_at", "2020-07-31 21:55:45.172480"], ["sender_id", 1], ["receiver_id", 4]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999800.0], ["updated_at", "2020-07-31 21:55:45.173569"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:45.174640"], ["balance", 100.0], ["id", 4]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zayne@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "zayne@example.com"], ["encrypted_password", "$2a$12$mNMVbjMmXF5F47hkCWhGnuIHvmYNMVhUKudyMh4J59kMkA.omO7Im"], ["created_at", "2020-07-31 21:55:45.368326"], ["updated_at", "2020-07-31 21:55:45.368326"], ["first_name", "Zayne"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/f/f6/Shoto_Todoroki_Anime_Portrait.png/revision/latest?cb=20180503174441"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:45.370286"], ["updated_at", "2020-07-31 21:55:45.370286"], ["sender_id", 1], ["receiver_id", 5]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999700.0], ["updated_at", "2020-07-31 21:55:45.371529"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:45.372649"], ["balance", 100.0], ["id", 5]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jim@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jim@example.com"], ["encrypted_password", "$2a$12$e0cVSWJFzaHbyaxjQQtmg.IpEv19ZgPgA0MXX1GDEqTN.xAow9g.S"], ["created_at", "2020-07-31 21:55:45.567028"], ["updated_at", "2020-07-31 21:55:45.567028"], ["first_name", "Jim"], ["avatar_url", "https://vignette.wikia.nocookie.net/thekindaichicasefiles/images/f/f1/Ryosuke_Komori_(Anime_Portrait).jpg/revision/latest/scale-to-width-down/120?cb=20161023010027"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:45.569067"], ["updated_at", "2020-07-31 21:55:45.569067"], ["sender_id", 1], ["receiver_id", 6]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999600.0], ["updated_at", "2020-07-31 21:55:45.570234"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:45.571300"], ["balance", 100.0], ["id", 6]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hannah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hannah@example.com"], ["encrypted_password", "$2a$12$dOaNW0dXh0euKLv8dbbNDuIJPQMgwcp/CfN5bMNf.JqdpRjAIedF2"], ["created_at", "2020-07-31 21:55:45.769675"], ["updated_at", "2020-07-31 21:55:45.769675"], ["first_name", "Hannah"], ["avatar_url", "https://lh3.googleusercontent.com/w0hBYvcTMDHcNcq9Lcu6N8SYslnwioJK664s6Q8MVt9WhRAQKBw6_kVKOrgPokFoI88=s180"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:45.771696"], ["updated_at", "2020-07-31 21:55:45.771696"], ["sender_id", 1], ["receiver_id", 7]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999500.0], ["updated_at", "2020-07-31 21:55:45.772715"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:45.773810"], ["balance", 100.0], ["id", 7]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kyle@example.com"], ["encrypted_password", "$2a$12$QL5BxbtefrIIKsFakEOxuOF0UX4n0T56.XtWzjTaY5fQPd0iiYNTW"], ["created_at", "2020-07-31 21:55:45.966539"], ["updated_at", "2020-07-31 21:55:45.966539"], ["first_name", "Kyle"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/6/67/Mirio_Togata_Anime_Portrait.png/revision/latest/scale-to-width-down/161?cb=20180923214326"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:45.968526"], ["updated_at", "2020-07-31 21:55:45.968526"], ["sender_id", 1], ["receiver_id", 8]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999400.0], ["updated_at", "2020-07-31 21:55:45.969606"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:45.970624"], ["balance", 100.0], ["id", 8]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bella@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bella@example.com"], ["encrypted_password", "$2a$12$/Tlvq54fBQEzBitBUEVTwOnVGWXMr4mkuEKJL3iUS5.FBUM8EgmHW"], ["created_at", "2020-07-31 21:55:46.163432"], ["updated_at", "2020-07-31 21:55:46.163432"], ["first_name", "Bella"], ["avatar_url", "https://thumbs.dreamstime.com/t/beautiful-cartoon-smiling-girl-portrait-long-brown-hair-big-black-eyes-yellow-shirt-hand-drawn-illustration-isolated-white-139380567.jpg"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:55:46.165232"], ["updated_at", "2020-07-31 21:55:46.165232"], ["sender_id", 1], ["receiver_id", 9]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999300.0], ["updated_at", "2020-07-31 21:55:46.166338"], ["id", 1]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:55:46.167498"], ["balance", 100.0], ["id", 9]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:55:46.171486"], ["updated_at", "2020-07-31 21:55:46.171486"], ["sender_id", 2], ["receiver_id", 9]]
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 90.0], ["updated_at", "2020-07-31 21:55:46.173417"], ["id", 2]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 110.0], ["updated_at", "2020-07-31 21:55:46.174427"], ["id", 9]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$mX4H5eAJ8.rCKSRdPJ2E5ejrUxVswcBiriyo3zdR8e8t1W14EmYNm"], ["created_at", "2020-07-31 21:56:53.833475"], ["updated_at", "2020-07-31 21:56:53.833475"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:53.837418"], ["updated_at", "2020-07-31 21:56:53.837418"], ["sender_id", 10], ["receiver_id", 10]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:56:53.838757"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:53.840034"], ["balance", 1000100.0], ["id", 10]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$daNxGfcIblzbabi32BWV0.pZ84t.Ky7gstUICTK/6wT/WCBbCWGq6"], ["created_at", "2020-07-31 21:56:54.032159"], ["updated_at", "2020-07-31 21:56:54.032159"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:54.034130"], ["updated_at", "2020-07-31 21:56:54.034130"], ["sender_id", 10], ["receiver_id", 11]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 1000000.0], ["updated_at", "2020-07-31 21:56:54.035191"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:54.036218"], ["balance", 100.0], ["id", 11]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sarah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sarah@example.com"], ["encrypted_password", "$2a$12$FxlBYWrlM2J3Nt39lgtnO.qMlUlzygq54HpxH9bbihv1zsup/RWey"], ["created_at", "2020-07-31 21:56:54.227727"], ["updated_at", "2020-07-31 21:56:54.227727"], ["first_name", "Sarah"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fc52784-7a18-4d4d-9ccb-110a8d80a5bb/d6mtt55-f9b343d7-8f79-40d9-8c5c-401bc3ce8d03.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi84ZmM1Mjc4NC03YTE4LTRkNGQtOWNjYi0xMTBhOGQ4MGE1YmIvZDZtdHQ1NS1mOWIzNDNkNy04Zjc5LTQwZDktOGM1Yy00MDFiYzNjZThkMDMuanBnIn1dXX0.6-3ihZXl6Fxd6GnP4DHwAjiH1S9i4E3xeyKB5uR40gA"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:54.229746"], ["updated_at", "2020-07-31 21:56:54.229746"], ["sender_id", 10], ["receiver_id", 12]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999900.0], ["updated_at", "2020-07-31 21:56:54.230864"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:54.231885"], ["balance", 100.0], ["id", 12]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "samantha@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "samantha@example.com"], ["encrypted_password", "$2a$12$16ONO.5EVY9CbKc5KDNXDO0BNXSVa3BHAAhByfsGlV0x9b78AgD4y"], ["created_at", "2020-07-31 21:56:54.425150"], ["updated_at", "2020-07-31 21:56:54.425150"], ["first_name", "Samantha"], ["avatar_url", "https://static.boredpanda.com/blog/wp-content/uploads/2017/03/seol-58d1246b4f584-png__880.jpg"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:54.427075"], ["updated_at", "2020-07-31 21:56:54.427075"], ["sender_id", 10], ["receiver_id", 13]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999800.0], ["updated_at", "2020-07-31 21:56:54.428140"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:54.429171"], ["balance", 100.0], ["id", 13]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zayne@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "zayne@example.com"], ["encrypted_password", "$2a$12$.rxb88O2XBVoI4A2PaXXQeT8TauIbaI1SQKq7EdMRil19c6BGgCim"], ["created_at", "2020-07-31 21:56:54.625838"], ["updated_at", "2020-07-31 21:56:54.625838"], ["first_name", "Zayne"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/f/f6/Shoto_Todoroki_Anime_Portrait.png/revision/latest?cb=20180503174441"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:54.627817"], ["updated_at", "2020-07-31 21:56:54.627817"], ["sender_id", 10], ["receiver_id", 14]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999700.0], ["updated_at", "2020-07-31 21:56:54.628886"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:54.629932"], ["balance", 100.0], ["id", 14]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jim@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jim@example.com"], ["encrypted_password", "$2a$12$LIKo8FKZp5QZp/G1Rm3sseL3V/jFUUZ8dulA2E1Xjc6/T2HWFqgQC"], ["created_at", "2020-07-31 21:56:54.822802"], ["updated_at", "2020-07-31 21:56:54.822802"], ["first_name", "Jim"], ["avatar_url", "https://vignette.wikia.nocookie.net/thekindaichicasefiles/images/f/f1/Ryosuke_Komori_(Anime_Portrait).jpg/revision/latest/scale-to-width-down/120?cb=20161023010027"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:54.824816"], ["updated_at", "2020-07-31 21:56:54.824816"], ["sender_id", 10], ["receiver_id", 15]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999600.0], ["updated_at", "2020-07-31 21:56:54.825878"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:54.827026"], ["balance", 100.0], ["id", 15]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hannah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hannah@example.com"], ["encrypted_password", "$2a$12$dD8q0hIe9NO8jzXsKqOnbOSXGYZeNVc8eMp3u2Hy2KU8suG27R5Pu"], ["created_at", "2020-07-31 21:56:55.019147"], ["updated_at", "2020-07-31 21:56:55.019147"], ["first_name", "Hannah"], ["avatar_url", "https://lh3.googleusercontent.com/w0hBYvcTMDHcNcq9Lcu6N8SYslnwioJK664s6Q8MVt9WhRAQKBw6_kVKOrgPokFoI88=s180"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:55.021080"], ["updated_at", "2020-07-31 21:56:55.021080"], ["sender_id", 10], ["receiver_id", 16]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999500.0], ["updated_at", "2020-07-31 21:56:55.022172"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:55.023227"], ["balance", 100.0], ["id", 16]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kyle@example.com"], ["encrypted_password", "$2a$12$Um4ReamZwjfktyUc1Kt6MugCGAnt1J.txT6orWPo9rE1p7Ph/GP/W"], ["created_at", "2020-07-31 21:56:55.213269"], ["updated_at", "2020-07-31 21:56:55.213269"], ["first_name", "Kyle"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/6/67/Mirio_Togata_Anime_Portrait.png/revision/latest/scale-to-width-down/161?cb=20180923214326"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:55.215129"], ["updated_at", "2020-07-31 21:56:55.215129"], ["sender_id", 10], ["receiver_id", 17]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999400.0], ["updated_at", "2020-07-31 21:56:55.216158"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:55.217197"], ["balance", 100.0], ["id", 17]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bella@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bella@example.com"], ["encrypted_password", "$2a$12$YYwDj0bHUianL7dWaC61CepREEfaOCNM5kSoxgSv2t5PIn4OJzJ3u"], ["created_at", "2020-07-31 21:56:55.408563"], ["updated_at", "2020-07-31 21:56:55.408563"], ["first_name", "Bella"], ["avatar_url", "https://thumbs.dreamstime.com/t/beautiful-cartoon-smiling-girl-portrait-long-brown-hair-big-black-eyes-yellow-shirt-hand-drawn-illustration-isolated-white-139380567.jpg"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:10:in `create_bonus_transaction'
+  [1m[36mTransaction Create (3.9ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:56:55.410684"], ["updated_at", "2020-07-31 21:56:55.410684"], ["sender_id", 10], ["receiver_id", 18]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 999300.0], ["updated_at", "2020-07-31 21:56:55.415780"], ["id", 10]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "balance" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-07-31 21:56:55.416916"], ["balance", 100.0], ["id", 18]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bella@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:56:55.420950"], ["updated_at", "2020-07-31 21:56:55.420950"], ["sender_id", 17], ["receiver_id", 18]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 90.0], ["updated_at", "2020-07-31 21:56:55.423216"], ["id", 17]]
+  ↳ app/models/user.rb:25:in `adjust_balance'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", 110.0], ["updated_at", "2020-07-31 21:56:55.424381"], ["id", 18]]
+  ↳ app/models/user.rb:23:in `adjust_balance'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m

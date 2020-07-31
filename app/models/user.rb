@@ -16,4 +16,13 @@ class User < ApplicationRecord
   def apply_bonus
     Transaction.create_bonus_transaction(self)
   end
+
+  def adjust_balance(add_or_deduct, amount)
+    case add_or_deduct
+    when "add"
+      self.update(balance: self.balance + amount)
+    when "deduct"
+      self.update(balance: self.balance - amount)
+    end
+  end
 end
