@@ -13,11 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ // FontAwesome
  @import "font-awesome-sprockets";
  @import "font-awesome";
- @import "bulma";
- @import "components/contact";
- @import "components/transaction";
- @import "components/payment";
- @import "utilities/interactions";
+
+// Config
+@import "config/index";
+
+// Bulma
+@import "bulma";
+@import "components/contact";
+@import "components/transaction";
+@import "components/payment";
+@import "utilities/interactions";
 

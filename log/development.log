@@ -4228,3 +4228,1783 @@ Completed 200 OK in 1065ms (Views: 1062.5ms | ActiveRecord: 0.2ms | Allocations:
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mTransaction Create (4.0ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 18:51:19.067961"], ["updated_at", "2020-07-31 18:51:19.067961"], ["sender_id", 9], ["receiver_id", 10]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$O8BjKjh5N9YtmQnvnmWqn.vou.CBpwx1WbGN87nW5iDJth.ATEFhy"], ["created_at", "2020-07-31 20:46:43.705240"], ["updated_at", "2020-07-31 20:46:43.705240"], ["first_name", "Bambank"], ["avatar_url", "https://utulsa.edu/wp-content/uploads/2018/08/generic-avatar-300x300.jpg"], ["balance", 1000000.0]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$tvXQbFDIYHG1Ah5H5qCDFeScwOCJLha1EgjB.zCZx219XEY9crLrS"], ["created_at", "2020-07-31 20:46:43.900185"], ["updated_at", "2020-07-31 20:46:43.900185"], ["first_name", "John"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bill@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "bill@example.com"], ["encrypted_password", "$2a$12$uIbzjfxC1PBm040pRcVpaO9XAZ6wVbsT1g40NHTN0s8m601hRhxmi"], ["created_at", "2020-07-31 20:46:44.095327"], ["updated_at", "2020-07-31 20:46:44.095327"], ["first_name", "Bill"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 20:46:44.103461"], ["updated_at", "2020-07-31 20:46:44.103461"], ["sender_id", 12], ["receiver_id", 13]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8443.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_development"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8107.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_development"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8166.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_development"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (63.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_development"[0m
+  [1m[35m (43.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bambank_test"[0m
+  [1m[35m (149.3ms)[0m  [1m[35mCREATE DATABASE "bambank_development" ENCODING = 'unicode'[0m
+  [1m[35m (54.6ms)[0m  [1m[35mCREATE DATABASE "bambank_test" ENCODING = 'unicode'[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5583818253845008275)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200731131023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731131023"]]
+  [1m[35m (53.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToUser (20200731131246)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar_url" character varying DEFAULT 'https://utulsa.edu/wp-content/uploads/2018/08/generic-avatar-300x300.jpg'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "first_signin" boolean DEFAULT TRUE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "balance" float[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731131246"]]
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20200731131955)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "amount" float, "reference" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731131955"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddReferencesToTransaction (20200731132246)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "transactions" ADD "sender_id" bigint[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_sender_id" ON "transactions"  ("sender_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_aa3b5f8d6f"
+FOREIGN KEY ("sender_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "transactions" ADD "receiver_id" bigint[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_receiver_id" ON "transactions"  ("receiver_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_d261c16c42"
+FOREIGN KEY ("receiver_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200731132246"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-31 20:50:09.639645"], ["updated_at", "2020-07-31 20:50:09.639645"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5583818253845008275)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "balance") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$5T29FWtCYjJPCeYmmJa2ZetltAV6S1lSs4MgfG6i5GJel7I5ngyKC"], ["created_at", "2020-07-31 20:50:09.960981"], ["updated_at", "2020-07-31 20:50:09.960981"], ["first_name", "Bambank"], ["balance", 1000000.0]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$/XycGmg9BJFJKjCsqFZO4.5/mTOlva.bmgetigN866YGBS5xeaW0q"], ["created_at", "2020-07-31 20:50:10.155995"], ["updated_at", "2020-07-31 20:50:10.155995"], ["first_name", "John"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bill@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "bill@example.com"], ["encrypted_password", "$2a$12$GvIrs9kJX9uZFqg6KJy/xuO7GEQSxFQve.iw15LKEvLR4MLDY5YhS"], ["created_at", "2020-07-31 20:50:10.355470"], ["updated_at", "2020-07-31 20:50:10.355470"], ["first_name", "Bill"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (2.8ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 20:50:10.374466"], ["updated_at", "2020-07-31 20:50:10.374466"], ["sender_id", 2], ["receiver_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/sign_in" for ::1 at 2020-07-31 21:51:01 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 200)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1943)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 489)
+Completed 200 OK in 192ms (Views: 169.5ms | ActiveRecord: 3.6ms | Allocations: 51092)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-07-31 21:51:17 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dhTr8sIhdRyGp6pXM3O+5jn4iKtDVvFc51vWidMLCrBwb0MxqIz/7ew2Sim5Rr+tqXgMfwc2usQeu2gvDLuA3g==", "user"=>{"email"=>"john@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 221ms (ActiveRecord: 0.7ms | Allocations: 6956)
+
+
+Started GET "/" for ::1 at 2020-07-31 21:51:17 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 160)
+Completed 200 OK in 25ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 12480)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 21:51:17 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (1.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 15.7ms | ActiveRecord: 5.2ms | Allocations: 12147)
+
+
+Started GET "/undefined" for ::1 at 2020-07-31 21:51:17 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/undefined"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-31 21:51:47 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: dbfac9d5cb3861d6cd78
+Version: webpack 4.44.1
+Time: 1232ms
+Built at: 07/31/2020 9:51:50 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-9afcbb5693aa87623e69.js   124 KiB                     application  [emitted] [immutable]  application
+                   js/application-9afcbb5693aa87623e69.js.map   139 KiB                     application  [emitted] [dev]        application
+                    js/components/app-5f889a5c3afc63a40cc2.js   159 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-5f889a5c3afc63a40cc2.js.map   141 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-c4b3a2edd6cd67241fe5.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-c4b3a2edd6cd67241fe5.js.map  95.6 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-f557b88d9557b84d7e4b.js  80.3 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-f557b88d9557b84d7e4b.js.map  89.7 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-ecdee033c94e2bd4bb00.js  82.9 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-ecdee033c94e2bd4bb00.js.map  90.7 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-4b67e1350e499742453c.js  81.7 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-4b67e1350e499742453c.js.map  90.3 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-a709db21ba5b867a4d2d.js  84.6 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-a709db21ba5b867a4d2d.js.map  91.6 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-f1ccc6975cb5680a803f.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-f1ccc6975cb5680a803f.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+Entrypoint components/app = js/components/app-5f889a5c3afc63a40cc2.js js/components/app-5f889a5c3afc63a40cc2.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-c4b3a2edd6cd67241fe5.js js/components/new_payment-c4b3a2edd6cd67241fe5.js.map
+Entrypoint components/notification = js/components/notification-f557b88d9557b84d7e4b.js js/components/notification-f557b88d9557b84d7e4b.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-ecdee033c94e2bd4bb00.js js/components/payees-ecdee033c94e2bd4bb00.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-4b67e1350e499742453c.js js/components/recent_transaction-4b67e1350e499742453c.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-a709db21ba5b867a4d2d.js js/components/recent_transactions-a709db21ba5b867a4d2d.js.map
+Entrypoint index = js/index-f1ccc6975cb5680a803f.js js/index-f1ccc6975cb5680a803f.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2972.5ms | Allocations: 3776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 149)
+Completed 200 OK in 2989ms (Views: 2986.0ms | ActiveRecord: 0.2ms | Allocations: 13055)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 21:51:50 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 7.7ms | ActiveRecord: 3.3ms | Allocations: 5890)
+
+
+Started GET "/undefined" for ::1 at 2020-07-31 21:52:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/undefined"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-31 21:52:22 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 547e52b65273e6a8f5a8
+Version: webpack 4.44.1
+Time: 1285ms
+Built at: 07/31/2020 9:52:25 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-9afcbb5693aa87623e69.js   124 KiB                     application  [emitted] [immutable]  application
+                   js/application-9afcbb5693aa87623e69.js.map   139 KiB                     application  [emitted] [dev]        application
+                    js/components/app-733d30cad26e448ccebf.js   159 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-733d30cad26e448ccebf.js.map   141 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-c4b3a2edd6cd67241fe5.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-c4b3a2edd6cd67241fe5.js.map  95.6 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-f557b88d9557b84d7e4b.js  80.3 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-f557b88d9557b84d7e4b.js.map  89.7 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-ecdee033c94e2bd4bb00.js  82.9 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-ecdee033c94e2bd4bb00.js.map  90.7 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-8705e5b8f5fcac8dba90.js  81.7 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-8705e5b8f5fcac8dba90.js.map  90.3 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-598506e290c29f751baf.js  84.6 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-598506e290c29f751baf.js.map  91.6 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-5be9a7ba966d8725e407.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-5be9a7ba966d8725e407.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+Entrypoint components/app = js/components/app-733d30cad26e448ccebf.js js/components/app-733d30cad26e448ccebf.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-c4b3a2edd6cd67241fe5.js js/components/new_payment-c4b3a2edd6cd67241fe5.js.map
+Entrypoint components/notification = js/components/notification-f557b88d9557b84d7e4b.js js/components/notification-f557b88d9557b84d7e4b.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-ecdee033c94e2bd4bb00.js js/components/payees-ecdee033c94e2bd4bb00.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-8705e5b8f5fcac8dba90.js js/components/recent_transaction-8705e5b8f5fcac8dba90.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-598506e290c29f751baf.js js/components/recent_transactions-598506e290c29f751baf.js.map
+Entrypoint index = js/index-5be9a7ba966d8725e407.js js/index-5be9a7ba966d8725e407.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 3006.0ms | Allocations: 3738)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 3021ms (Views: 3018.4ms | ActiveRecord: 0.2ms | Allocations: 12957)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 21:52:25 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 1.7ms | Allocations: 5548)
+
+
+Started GET "/" for ::1 at 2020-07-31 21:55:41 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: b0f1e02c868956de8ede
+Version: webpack 4.44.1
+Time: 1234ms
+Built at: 07/31/2020 9:55:44 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-733d30cad26e448ccebf.js   159 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-733d30cad26e448ccebf.js.map   141 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-c4b3a2edd6cd67241fe5.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-c4b3a2edd6cd67241fe5.js.map  95.6 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-f557b88d9557b84d7e4b.js  80.3 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-f557b88d9557b84d7e4b.js.map  89.7 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-ecdee033c94e2bd4bb00.js  82.9 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-ecdee033c94e2bd4bb00.js.map  90.7 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-8705e5b8f5fcac8dba90.js  81.7 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-8705e5b8f5fcac8dba90.js.map  90.3 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-598506e290c29f751baf.js  84.6 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-598506e290c29f751baf.js.map  91.6 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-5be9a7ba966d8725e407.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-5be9a7ba966d8725e407.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-733d30cad26e448ccebf.js js/components/app-733d30cad26e448ccebf.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-c4b3a2edd6cd67241fe5.js js/components/new_payment-c4b3a2edd6cd67241fe5.js.map
+Entrypoint components/notification = js/components/notification-f557b88d9557b84d7e4b.js js/components/notification-f557b88d9557b84d7e4b.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-ecdee033c94e2bd4bb00.js js/components/payees-ecdee033c94e2bd4bb00.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-8705e5b8f5fcac8dba90.js js/components/recent_transaction-8705e5b8f5fcac8dba90.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-598506e290c29f751baf.js js/components/recent_transactions-598506e290c29f751baf.js.map
+Entrypoint index = js/index-5be9a7ba966d8725e407.js js/index-5be9a7ba966d8725e407.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 3160.6ms | Allocations: 3817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 439)
+Completed 200 OK in 3183ms (Views: 3180.0ms | ActiveRecord: 0.2ms | Allocations: 14392)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 21:55:44 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 7.3ms | ActiveRecord: 4.3ms | Allocations: 5382)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 21:55:48 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 135)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 12135)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 21:56:20 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"aMoZeXl6o8EFg0DaZgIMUc4Iv0C3sLZGCdKrqel+W+4D0CyM6PP7vyqbPrB8KIaL6WkiermW67Zgd/M3xlDYFg==", "user"=>{"first_name"=>"James", "email"=>"john@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[31mUnpermitted parameter: :first_name[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$12$uWVgH7NoilpWGnXPfXynKe/PrxIAUkbZy/w0WBQPAb4G0V9z7xkNe"], ["updated_at", "2020-07-31 20:56:20.617709"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[31mUnpermitted parameter: :first_name[0m
+[31mUnpermitted parameter: :first_name[0m
+[31mUnpermitted parameter: :first_name[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 413ms (ActiveRecord: 1.3ms | Allocations: 10413)
+
+
+Started GET "/" for ::1 at 2020-07-31 21:56:20 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 155)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 0.1ms | Allocations: 11556)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 21:56:20 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.8ms | Allocations: 5374)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 21:56:49 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 10294)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 22:01:04 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 952)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 138)
+Completed 200 OK in 35ms (Views: 16.9ms | ActiveRecord: 3.4ms | Allocations: 17029)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:01:19 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"kzHqNxiiqQQF4qLHZ5m5zSsL7YOmQwZ5egdNMxm26bVAI5KsV+qomak0/xxc/5jP+JWbu1CIM7BGmMwKSuiI0g==", "user"=>{"first_name"=>"James", "email"=>"john@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 239)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 425ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 14261)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:01:38 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"ODGGI/LdDXC4el7LdUYZwWwWCzV9UPbja2a1k/3PIWjrI/64vZUM7RSsAxBOIDjDv4h9DYubwypX+TSqrpFADw==", "user"=>{"first_name"=>"James", "email"=>"john@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "first_name" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["encrypted_password", "$2a$12$RTJ5..3tQg6kLE1p8DhnF./ca7eLQ5x73IIH96byvz/eJrBZZeVom"], ["first_name", "James"], ["updated_at", "2020-07-31 21:01:38.570876"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 416ms (ActiveRecord: 1.2ms | Allocations: 8869)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:01:38 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 156)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.2ms | Allocations: 11767)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:01:38 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 30ms (Views: 15.7ms | ActiveRecord: 5.3ms | Allocations: 10902)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 22:02:26 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 423)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 12949)
+
+
+Started GET "/users/" for ::1 at 2020-07-31 22:03:23 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-31 22:03:25 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 439)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.1ms | Allocations: 13163)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:03:26 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 2], ["receiver_id", 2]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 5354)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-07-31 22:03:27 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vDBBmdBluyfDikdc/qZoiUEgXR5RvgMz9OOSCrZ+W21vIjkCny26um9cGofFwEmLkr4rJqd1NvrIfBMz5SA6Cg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 2751)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:03:27 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:03:27 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 191)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1157)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 176)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 10214)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:03:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 919)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 9568)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:04:05 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1328)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 460)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 11145)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:04:50 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1323)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 460)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 11124)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:05:13 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 421)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:05:13 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 191)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 460)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 11006)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:05:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1017)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 9749)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:05:26 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 557)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 175)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 8714)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:05:32 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 435)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:05:32 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 536)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 168)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 8560)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:05:42 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 168)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 8659)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:06:42 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 460)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 11129)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:06:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 840)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 9644)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:06:51 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 672)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 8670)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:07:12 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 460)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 11127)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:07:38 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 192)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1307)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 460)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 11094)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:08:08 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1308)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 460)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 11120)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:08:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 460)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 11089)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:08:45 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 460)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 11100)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:09:03 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1293)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 465)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 11153)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:09:09 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 460)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 11226)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:10:44 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1303)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 460)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 11108)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:12:24 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1298)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 460)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 11090)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:13:32 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 461)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 11209)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:13:50 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 460)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 11094)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:13:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 837)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 9545)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:14:05 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 664)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 8667)
+
+
+Started POST "/users" for ::1 at 2020-07-31 22:14:36 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"FYoRRC8EXMBT4ZyESmBcNIpOGjAjIcEclarh5NJToziIfE8YUBc8m4dwLGoLwnnxCfA/BC2ONAwrBLUQI77gWA==", "user"=>{"first_name"=>"bill", "email"=>"", "avatar_url"=>"https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 206)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 870)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 168)
+Completed 200 OK in 222ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 11492)
+
+
+Started POST "/users" for ::1 at 2020-07-31 22:14:51 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"VWff9P6JgbWP9IEBURIF32FmY2GsaAf0siLDLc6ed7rIkYGogZrh7ltlMe8QsCAa4thGVaLH8uQMjJfZP3M02g==", "user"=>{"first_name"=>"bill", "email"=>"billybob@gmail.com", "avatar_url"=>"https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "billybob@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "billybob@gmail.com"], ["encrypted_password", "$2a$12$0fv//agISALlYGthSQBdDuu7oyBBBbdg36d5DPQPO3eBJnvXOoEwW"], ["created_at", "2020-07-31 21:14:51.780678"], ["updated_at", "2020-07-31 21:14:51.780678"], ["first_name", "bill"], ["avatar_url", "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms (ActiveRecord: 3.2ms | Allocations: 7444)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:14:51 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 155)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.1ms | Allocations: 12391)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:14:52 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 4], ["receiver_id", 4]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 2874)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-07-31 22:15:03 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N/IaG/27gSwqVFdMQ6YHuXeVl5USRw1/cM1WNdQN4fiqBERHgqjhd/7F56ICBCJ89CuyoRzo+G/OYwLBJeCimA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 2329)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:15:03 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 403)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:15:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 175)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 8692)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:15:05 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 8667)
+
+
+Started POST "/users" for ::1 at 2020-07-31 22:15:19 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ajucm9njTQ79Hc+YgU9hJYrgP4MAuwWLOgYZWe015n8XhTConeVjYN5QQnndeZS5PjlJlTdNYXB+ufa1TEqtJg==", "user"=>{"first_name"=>"bob", "email"=>"bob@bob.com", "avatar_url"=>"https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@bob.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bob@bob.com"], ["encrypted_password", "$2a$12$afNFne5ULjcHzx7sDlIEBu7r7nQ1rsxizFxrWG5uT/FbiG71ub8AK"], ["created_at", "2020-07-31 21:15:20.043256"], ["updated_at", "2020-07-31 21:15:20.043256"], ["first_name", "bob"], ["avatar_url", "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 212ms (ActiveRecord: 1.1ms | Allocations: 7335)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:15:20 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.1ms | Allocations: 11642)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:15:20 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 5], ["receiver_id", 5]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 1.2ms | Allocations: 2866)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-07-31 22:16:27 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/kl6/QoNxwSRV7FL6ffQW2Px519qUV0dwPKNL8/2dh1fgSbZNlwSyRREPBGCwUTCe7DEa/jIKP1HPjHtNdQH8w=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 2.7ms | Allocations: 9045)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:16:27 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 466)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:16:27 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 178)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 8857)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-07-31 22:16:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 8992)
+
+
+Started POST "/users" for ::1 at 2020-07-31 22:16:45 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"rEyLZmxx1y9v4MCmJ7mCQcjdugfFihCAyodCGFJ1MJ/Tx1svt5yU9kiW7SI13zXRPV+NytY1P+13VClhtygM2g==", "user"=>{"first_name"=>"bobby", "email"=>"bobby@gmail.com", "avatar_url"=>"https://utulsa.edu/wp-content/uploads/2018/08/generic-avatar-300x300.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bobby@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "bobby@gmail.com"], ["encrypted_password", "$2a$12$Bsb2Q2aV7gkKzvd/MzjlhOavLBYgZr4x6AuO2KATG/VYNQoIQVr/q"], ["created_at", "2020-07-31 21:16:45.400545"], ["updated_at", "2020-07-31 21:16:45.400545"], ["first_name", "bobby"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:16:45.415515"], ["updated_at", "2020-07-31 21:16:45.415515"], ["sender_id", 1], ["receiver_id", 6]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 232ms (ActiveRecord: 10.2ms | Allocations: 14112)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:16:45 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 158)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.1ms | Allocations: 11704)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:16:45 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 6], ["receiver_id", 6]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.8ms | Allocations: 5942)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$8jrd9x6nO3D7ub4Fy4Gbe.xgublh1uw4gS6xQCl20jEyg5BGqGTyK"], ["created_at", "2020-07-31 21:27:59.252762"], ["updated_at", "2020-07-31 21:27:59.252762"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:27:59.259181"], ["updated_at", "2020-07-31 21:27:59.259181"], ["sender_id", 7], ["receiver_id", 7]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$CbuOefnOOc6XmbrodxRboe/1Q9NyQYHmKC2cfB7C.TS0YihoOB8HS"], ["created_at", "2020-07-31 21:27:59.465632"], ["updated_at", "2020-07-31 21:27:59.465632"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:27:59.467755"], ["updated_at", "2020-07-31 21:27:59.467755"], ["sender_id", 7], ["receiver_id", 8]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sarah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sarah@example.com"], ["encrypted_password", "$2a$12$PTUMFBCWo7M4BZ3eo4a31uV3KhfnzCz8uw8zcUc/X9wO.zO3LAAWu"], ["created_at", "2020-07-31 21:27:59.693933"], ["updated_at", "2020-07-31 21:27:59.693933"], ["first_name", "Sarah"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fc52784-7a18-4d4d-9ccb-110a8d80a5bb/d6mtt55-f9b343d7-8f79-40d9-8c5c-401bc3ce8d03.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi84ZmM1Mjc4NC03YTE4LTRkNGQtOWNjYi0xMTBhOGQ4MGE1YmIvZDZtdHQ1NS1mOWIzNDNkNy04Zjc5LTQwZDktOGM1Yy00MDFiYzNjZThkMDMuanBnIn1dXX0.6-3ihZXl6Fxd6GnP4DHwAjiH1S9i4E3xeyKB5uR40gA"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:27:59.696684"], ["updated_at", "2020-07-31 21:27:59.696684"], ["sender_id", 7], ["receiver_id", 9]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "samantha@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "samantha@example.com"], ["encrypted_password", "$2a$12$R5btCKLVnH7UMkT51uJaUev.JqqoqDX7TnjYctJ5wzgSLH5kVyrDC"], ["created_at", "2020-07-31 21:27:59.898893"], ["updated_at", "2020-07-31 21:27:59.898893"], ["first_name", "Samantha"], ["avatar_url", "https://static.boredpanda.com/blog/wp-content/uploads/2017/03/seol-58d1246b4f584-png__880.jpg"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:27:59.901005"], ["updated_at", "2020-07-31 21:27:59.901005"], ["sender_id", 7], ["receiver_id", 10]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zayne@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "zayne@example.com"], ["encrypted_password", "$2a$12$VKHXt5Ed.r3PYKzcN040N.yiXbigIyZHM/UqIYYAxVgg6Fm6L0XYC"], ["created_at", "2020-07-31 21:28:00.108050"], ["updated_at", "2020-07-31 21:28:00.108050"], ["first_name", "Zayne"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/f/f6/Shoto_Todoroki_Anime_Portrait.png/revision/latest?cb=20180503174441"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:28:00.113838"], ["updated_at", "2020-07-31 21:28:00.113838"], ["sender_id", 7], ["receiver_id", 11]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jim@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jim@example.com"], ["encrypted_password", "$2a$12$jEtWzGaVNYiNg8KnY/dSmulgOhxMkhk7W6RtWjtpsQiX0DOJ4sYYW"], ["created_at", "2020-07-31 21:28:00.304738"], ["updated_at", "2020-07-31 21:28:00.304738"], ["first_name", "Jim"], ["avatar_url", "https://vignette.wikia.nocookie.net/thekindaichicasefiles/images/f/f1/Ryosuke_Komori_(Anime_Portrait).jpg/revision/latest/scale-to-width-down/120?cb=20161023010027"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:28:00.306589"], ["updated_at", "2020-07-31 21:28:00.306589"], ["sender_id", 7], ["receiver_id", 12]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hannah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hannah@example.com"], ["encrypted_password", "$2a$12$3W0Kf1LE58LnwJCcPr.xnu9HJWTnBoPEJcsZ/3sBT/BBp3/4GiOMS"], ["created_at", "2020-07-31 21:28:00.494458"], ["updated_at", "2020-07-31 21:28:00.494458"], ["first_name", "Hannah"], ["avatar_url", "https://lh3.googleusercontent.com/w0hBYvcTMDHcNcq9Lcu6N8SYslnwioJK664s6Q8MVt9WhRAQKBw6_kVKOrgPokFoI88=s180"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:28:00.496507"], ["updated_at", "2020-07-31 21:28:00.496507"], ["sender_id", 7], ["receiver_id", 13]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kyle@example.com"], ["encrypted_password", "$2a$12$LA2/aiZI01RUBCEWkuahOOXUwnVatl5MLvNgk.HxUg.B67MMPEF6i"], ["created_at", "2020-07-31 21:28:00.716719"], ["updated_at", "2020-07-31 21:28:00.716719"], ["first_name", "Kyle"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/6/67/Mirio_Togata_Anime_Portrait.png/revision/latest/scale-to-width-down/161?cb=20180923214326"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:28:00.718965"], ["updated_at", "2020-07-31 21:28:00.718965"], ["sender_id", 7], ["receiver_id", 14]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bella@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bella@example.com"], ["encrypted_password", "$2a$12$ZrP8IFXdYHjsijK5Ylge..UWEolGqcTHvNlHvIbsoahNJsY9w4Gsa"], ["created_at", "2020-07-31 21:28:00.927291"], ["updated_at", "2020-07-31 21:28:00.927291"], ["first_name", "Bella"], ["avatar_url", "https://thumbs.dreamstime.com/t/beautiful-cartoon-smiling-girl-portrait-long-brown-hair-big-black-eyes-yellow-shirt-hand-drawn-illustration-isolated-white-139380567.jpg"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:28:00.929576"], ["updated_at", "2020-07-31 21:28:00.929576"], ["sender_id", 7], ["receiver_id", 15]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:28:00.933700"], ["updated_at", "2020-07-31 21:28:00.933700"], ["sender_id", 8], ["receiver_id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url", "balance") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hello@bambank.com"], ["encrypted_password", "$2a$12$Fhs0Z1xlSbpy0WywogDf6eib4viS7pLI3cbYOQonlxBrphV5MQlK."], ["created_at", "2020-07-31 21:29:25.876014"], ["updated_at", "2020-07-31 21:29:25.876014"], ["first_name", "Bambank"], ["avatar_url", "https://www.shareicon.net/data/2016/10/20/846458_blue_512x512.png"], ["balance", 1000000.0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:25.879736"], ["updated_at", "2020-07-31 21:29:25.879736"], ["sender_id", 16], ["receiver_id", 16]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "john@example.com"], ["encrypted_password", "$2a$12$g5LKJA.cYoyOB5BWUzNYJujOvRMDUhe2TzLhxNSaIwzvYfL2s6WcG"], ["created_at", "2020-07-31 21:29:26.066341"], ["updated_at", "2020-07-31 21:29:26.066341"], ["first_name", "John"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:26.068535"], ["updated_at", "2020-07-31 21:29:26.068535"], ["sender_id", 16], ["receiver_id", 17]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sarah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sarah@example.com"], ["encrypted_password", "$2a$12$qa9ZXyueg0wHr.igRxDmquVlAc7sceZmHYJ5PEC/2pnlmdMnLMLuu"], ["created_at", "2020-07-31 21:29:26.264848"], ["updated_at", "2020-07-31 21:29:26.264848"], ["first_name", "Sarah"], ["avatar_url", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8fc52784-7a18-4d4d-9ccb-110a8d80a5bb/d6mtt55-f9b343d7-8f79-40d9-8c5c-401bc3ce8d03.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi84ZmM1Mjc4NC03YTE4LTRkNGQtOWNjYi0xMTBhOGQ4MGE1YmIvZDZtdHQ1NS1mOWIzNDNkNy04Zjc5LTQwZDktOGM1Yy00MDFiYzNjZThkMDMuanBnIn1dXX0.6-3ihZXl6Fxd6GnP4DHwAjiH1S9i4E3xeyKB5uR40gA"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:26.266657"], ["updated_at", "2020-07-31 21:29:26.266657"], ["sender_id", 16], ["receiver_id", 18]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "samantha@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "samantha@example.com"], ["encrypted_password", "$2a$12$M/8vYrsG1AODDw66Usn3Ze6s933cYlg6KxrQVpwFFe7qKZLV/Bibi"], ["created_at", "2020-07-31 21:29:26.459819"], ["updated_at", "2020-07-31 21:29:26.459819"], ["first_name", "Samantha"], ["avatar_url", "https://static.boredpanda.com/blog/wp-content/uploads/2017/03/seol-58d1246b4f584-png__880.jpg"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:26.461612"], ["updated_at", "2020-07-31 21:29:26.461612"], ["sender_id", 16], ["receiver_id", 19]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zayne@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "zayne@example.com"], ["encrypted_password", "$2a$12$MP.fOr87sDTCgKPCIgc7pu0BdHttxGlENsJHHfiZdXKPraQxtdANO"], ["created_at", "2020-07-31 21:29:26.648114"], ["updated_at", "2020-07-31 21:29:26.648114"], ["first_name", "Zayne"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/f/f6/Shoto_Todoroki_Anime_Portrait.png/revision/latest?cb=20180503174441"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:26.649938"], ["updated_at", "2020-07-31 21:29:26.649938"], ["sender_id", 16], ["receiver_id", 20]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jim@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jim@example.com"], ["encrypted_password", "$2a$12$zdOY8NEXemURffn.FzE.9OL1koSMpeGeZVEnS3wyJPbpYMlv69CTG"], ["created_at", "2020-07-31 21:29:26.835725"], ["updated_at", "2020-07-31 21:29:26.835725"], ["first_name", "Jim"], ["avatar_url", "https://vignette.wikia.nocookie.net/thekindaichicasefiles/images/f/f1/Ryosuke_Komori_(Anime_Portrait).jpg/revision/latest/scale-to-width-down/120?cb=20161023010027"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:26.837488"], ["updated_at", "2020-07-31 21:29:26.837488"], ["sender_id", 16], ["receiver_id", 21]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hannah@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hannah@example.com"], ["encrypted_password", "$2a$12$G9IL8fhRIX/Qx2gYSyVYoONKRzCF5OIN.N6uilNsO6FcGqv0EDQzW"], ["created_at", "2020-07-31 21:29:27.024461"], ["updated_at", "2020-07-31 21:29:27.024461"], ["first_name", "Hannah"], ["avatar_url", "https://lh3.googleusercontent.com/w0hBYvcTMDHcNcq9Lcu6N8SYslnwioJK664s6Q8MVt9WhRAQKBw6_kVKOrgPokFoI88=s180"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:27.026196"], ["updated_at", "2020-07-31 21:29:27.026196"], ["sender_id", 16], ["receiver_id", 22]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kyle@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kyle@example.com"], ["encrypted_password", "$2a$12$2/kkfUg8qkR7Kzs4BUwya.BGrZbwIvSPNXeCA5ct.fN8IoCSrd4R6"], ["created_at", "2020-07-31 21:29:27.213513"], ["updated_at", "2020-07-31 21:29:27.213513"], ["first_name", "Kyle"], ["avatar_url", "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/6/67/Mirio_Togata_Anime_Portrait.png/revision/latest/scale-to-width-down/161?cb=20180923214326"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:27.215331"], ["updated_at", "2020-07-31 21:29:27.215331"], ["sender_id", 16], ["receiver_id", 23]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bella@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "avatar_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bella@example.com"], ["encrypted_password", "$2a$12$mO.ODEjuv1yy93Vjsg7XbuBTkrTn5YTuu1xKRKk473TTqi2NXdIOm"], ["created_at", "2020-07-31 21:29:27.403817"], ["updated_at", "2020-07-31 21:29:27.403817"], ["first_name", "Bella"], ["avatar_url", "https://thumbs.dreamstime.com/t/beautiful-cartoon-smiling-girl-portrait-long-brown-hair-big-black-eyes-yellow-shirt-hand-drawn-illustration-isolated-white-139380567.jpg"]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@bambank.com"], ["LIMIT", 1]]
+  ↳ app/models/transaction.rb:9:in `create_bonus_transaction'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 100.0], ["reference", "Signup Bonus"], ["created_at", "2020-07-31 21:29:27.405846"], ["updated_at", "2020-07-31 21:29:27.405846"], ["sender_id", 16], ["receiver_id", 24]]
+  ↳ app/models/transaction.rb:8:in `create_bonus_transaction'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTransaction Create (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("amount", "reference", "created_at", "updated_at", "sender_id", "receiver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["amount", 10.0], ["reference", "party"], ["created_at", "2020-07-31 21:29:27.410475"], ["updated_at", "2020-07-31 21:29:27.410475"], ["sender_id", 17], ["receiver_id", 24]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-07-31 22:29:49 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 401 Unauthorized in 17ms (ActiveRecord: 3.9ms | Allocations: 4059)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:29:49 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 200)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 484)
+Completed 200 OK in 138ms (Views: 125.9ms | ActiveRecord: 0.0ms | Allocations: 42081)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-07-31 22:29:58 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"QXI5aqpIbq8DtxEACLhejQQzKFz3tjShI/FSumtOMBqEINQKztrcVihI9lWDpdzQ1ipEOnEEn7ZBjrIeAbdiOw==", "user"=>{"email"=>"john@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "john@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms (ActiveRecord: 0.3ms | Allocations: 4887)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:29:58 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2508)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 160)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 12425)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:29:59 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mTransaction Load (1.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 17], ["receiver_id", 17]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 56ms (Views: 30.0ms | ActiveRecord: 17.6ms | Allocations: 15060)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 22:30:51 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1413)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 135)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 11584)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:31:16 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"WRDnTroiF2bztadfD8t2dJQWKVBA+8r1OV/skAxW+yubnxbjlo0XCFRxSgJh2rbOWl3aoNCzhEdWI2Yo1ex9Bg==", "user"=>{"first_name"=>"Johnny", "email"=>"john@example.com", "avatar_url"=>"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11d051fd-e033-4bbe-a7dc-41c8da636c34/d7yso8k-585fe3cb-d9d0-46f9-a483-a27a1dbf3faa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi8xMWQwNTFmZC1lMDMzLTRiYmUtYTdkYy00MWM4ZGE2MzZjMzQvZDd5c284ay01ODVmZTNjYi1kOWQwLTQ2ZjktYTQ4My1hMjdhMWRiZjNmYWEucG5nIn1dXX0.F5On7t0rAD_y3hX1HMA_I2WMA6DV2ZKPuafjxSI3P80", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 239)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 128)
+Completed 200 OK in 411ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 15283)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:32:01 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"N8/XYb4xcDz5wz7WPRR/+BLPFJnwZtUbpzKAlL8sOCORGUQmowGayuOjJEwivuI0zTdr2Gxz5uy45RSjrkFWkg==", "user"=>{"first_name"=>"Johnny", "email"=>"john@example.com", "avatar_url"=>"https://i.ytimg.com/vi/QMCIR-e9D5Q/maxresdefault.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 375)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 412ms (Views: 14.1ms | ActiveRecord: 0.4ms | Allocations: 13552)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:32:27 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"QpSN6+Glu2Ci93YfpTjfJVWb0Z633KhjbhtJn5U3nhnkQh6s/JVRlriXbIW6kkLpimOu3yvJm5RxzN2ohFrwqA==", "user"=>{"first_name"=>"Johnny", "email"=>"john@example.com", "avatar_url"=>"https://i.ytimg.com/vi/QMCIR-e9D5Q/maxresdefault.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 374)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 128)
+Completed 200 OK in 417ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 13493)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:32:46 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"Q4NNEMuK2QNhn/eZb7mfha/tQZeu1Fl0HQacdKlPzp7lVd5X1roz9Xv/7QNwEwJJcBU+1jLBaoMC0QhDuCKgLw==", "user"=>{"first_name"=>"Johnny", "email"=>"john@example.com", "avatar_url"=>"https://i.ytimg.com/vi/QMCIR-e9D5Q/maxresdefault.jpg", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 374)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 423ms (Views: 9.6ms | ActiveRecord: 0.4ms | Allocations: 13370)
+
+
+Started GET "/users" for ::1 at 2020-07-31 22:32:49 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-31 22:32:51 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2438)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 157)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.3ms | Allocations: 11752)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:32:52 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 17], ["receiver_id", 17]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.9ms | Allocations: 7760)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 22:32:55 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 10278)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:33:07 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.2ms | Allocations: 11675)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:33:07 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 17], ["receiver_id", 17]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 1.3ms | Allocations: 7718)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-07-31 22:33:08 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2QNFb8i8J6phD7sfrqoiZ4UTIe5Jx8Cq3f91xyLwwyt/1dYo1YzNXHtvoYWxAL+rWuter9XS813CKOHwM52tmg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 2791)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:33:08 +0100
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-07-31 22:33:08 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 8594)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-07-31 22:33:29 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"VIbZIrdd1aEp1YlrsIeUMrFr8Yxa4tZRRlCXjws70nDbyhoBTxSkyWmFwI64tMHuYXrubSGVyZZNDo18MsYexw==", "user"=>{"email"=>"sarah@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "sarah@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 212ms (ActiveRecord: 0.3ms | Allocations: 2819)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:33:29 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 147)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.1ms | Allocations: 11663)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:33:30 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.8ms | Allocations: 5351)
+
+
+Started GET "/users/edit" for ::1 at 2020-07-31 22:33:35 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 946)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 10363)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:34:20 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"IAOhSmvHOwTMoBriqiPfJvYchK1ezu0KgGd3qTO8UVAndI32Mcz7NuYtY42clU3o4IjyTGlILHZcChZnD/AcMQ==", "user"=>{"first_name"=>"Sarah", "email"=>"sarah@example.com", "avatar_url"=>"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.ytimg.com%2Fvi%2FQMCIR-e9D5Q%2Fmaxresdefault.jpg&f=1&nofb=1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 496)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 231ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 13982)
+
+
+Started PATCH "/users" for ::1 at 2020-07-31 22:34:36 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"aWFxevBcwJBAIr7zbFo4NTMUEJLtbbHsJmct98cxXqLC7BIkzodIYzOHvNVKBD3hSq3kFGpCp68e1z9GUAHFGg==", "user"=>{"first_name"=>"Sarah", "email"=>"sarah@example.com", "avatar_url"=>"https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.ytimg.com%2Fvi%2FQMCIR-e9D5Q%2Fmaxresdefault.jpg&f=1&nofb=1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 226)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1185)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 128)
+Completed 200 OK in 409ms (Views: 12.4ms | ActiveRecord: 0.5ms | Allocations: 13666)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:34:55 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 11660)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:34:56 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 0.9ms | Allocations: 5344)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:35:21 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 147)
+Completed 200 OK in 1199ms (Views: 1196.3ms | ActiveRecord: 0.1ms | Allocations: 252319)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:35:23 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.9ms | Allocations: 5358)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:35:31 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.1ms | Allocations: 12158)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:35:31 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.8ms | Allocations: 5368)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:35:42 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 12056)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:35:42 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.7ms | Allocations: 5338)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:36:00 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 147)
+Completed 200 OK in 1163ms (Views: 1160.0ms | ActiveRecord: 0.1ms | Allocations: 255272)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:36:01 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 1.0ms | Allocations: 5346)
+
+
+Started GET "/" for ::1 at 2020-07-31 22:36:01 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 147)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 11671)
+
+
+Started GET "/transactions" for ::1 at 2020-07-31 22:36:01 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 5342)
+
+

@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_132246) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
-    t.string "avatar_url"
+    t.string "avatar_url", default: "https://utulsa.edu/wp-content/uploads/2018/08/generic-avatar-300x300.jpg"
     t.boolean "first_signin", default: true
     t.float "balance"
     t.index ["email"], name: "index_users_on_email", unique: true
