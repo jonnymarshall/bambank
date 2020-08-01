@@ -19,7 +19,7 @@ class App extends React.Component {
         }
       },
       currentUser: {
-        id: 11,
+        id: 20,
         firstName: "Jonny",
         balance: 100.00,
         isFirstLogin: true
