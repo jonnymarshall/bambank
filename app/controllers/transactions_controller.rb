@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render json: TransactionSerializer.new(current_user.all_transactions)
+    render json: TransactionSerializer.new(current_user.all_transactions.order(created_at: :desc))
   end
 
   def create
@@ -19,10 +19,9 @@ class TransactionsController < ApplicationController
   private
 
   def parse_params_to_transaction(transaction_params)
-    byebug
     {
       sender: User.find(transaction_params[:senderId].to_i),
-      receiver: transaction_params[:senderId].to_i,
+      receiver: User.find(transaction_params[:senderId].to_i),
       reference: transaction_params[:reference],
       amount: transaction_params[:amount]
     }

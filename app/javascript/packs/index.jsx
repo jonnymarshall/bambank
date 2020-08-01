@@ -7,7 +7,7 @@ import App from './components/app'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App name="React" />,
+    <App key={Math.random()} name="React" />,
     document.body.appendChild(document.createElement('div')),
   )
 })
