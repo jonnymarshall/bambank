@@ -2,10 +2,7 @@ import React, { Component, useState } from 'react';
 
 const RecentTransaction = (props) => {
   const { id, amount, date, reference, senderId, receiverId, currentUserId, payee } = props
-  // console.log(currentUserIsSender)
-  // console.log(senderId)
-  // console.log(receiverId)
-  // console.log(payee)
+
   return (
     <div className="column is-full is-flex c-transaction">
       <figure className="image is-64x64 c-transaction-c-contact--avatar">

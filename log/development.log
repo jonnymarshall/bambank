@@ -24190,3 +24190,1206 @@ Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 2.7ms | Allocations: 668
 Completed 200 OK in 34ms (Views: 22.6ms | ActiveRecord: 6.8ms | Allocations: 11433)
 
 
+Started GET "/" for ::1 at 2020-08-01 14:17:50 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 26dc2e762ad3519f2633
+Version: webpack 4.44.1
+Time: 1404ms
+Built at: 08/01/2020 2:17:53 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-24d1930c6ad93af6277a.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-24d1930c6ad93af6277a.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-754dbf7d9471b693281c.js  81.7 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-754dbf7d9471b693281c.js.map  90.3 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-2e394501ac89ab5320bb.js  85.2 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-2e394501ac89ab5320bb.js.map  92.1 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-d0046d7089c752e2d745.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-d0046d7089c752e2d745.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-24d1930c6ad93af6277a.js js/components/app-24d1930c6ad93af6277a.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-754dbf7d9471b693281c.js js/components/recent_transaction-754dbf7d9471b693281c.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-2e394501ac89ab5320bb.js js/components/recent_transactions-2e394501ac89ab5320bb.js.map
+Entrypoint index = js/index-d0046d7089c752e2d745.js js/index-d0046d7089c752e2d745.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2881.4ms | Allocations: 3742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2902ms (Views: 2898.6ms | ActiveRecord: 0.2ms | Allocations: 13011)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:17:53 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:17:53 +0100
+Processing by UsersController#index as JSON
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+Completed 200 OK in 10ms (Views: 2.7ms | ActiveRecord: 3.8ms | Allocations: 5760)
+
+
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 1.6ms | Allocations: 10870)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:19:21 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 98bdf659adf594032007
+Version: webpack 4.44.1
+Time: 1118ms
+Built at: 08/01/2020 2:19:24 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-0b5940ef30fb2ad1aabc.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-0b5940ef30fb2ad1aabc.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-e755b9889e2e726afef6.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-e755b9889e2e726afef6.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-be33b7fde0de99a245ee.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-be33b7fde0de99a245ee.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-be5e8f96e5af21e414ae.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-be5e8f96e5af21e414ae.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-0b5940ef30fb2ad1aabc.js js/components/app-0b5940ef30fb2ad1aabc.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-e755b9889e2e726afef6.js js/components/recent_transaction-e755b9889e2e726afef6.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-be33b7fde0de99a245ee.js js/components/recent_transactions-be33b7fde0de99a245ee.js.map
+Entrypoint index = js/index-be5e8f96e5af21e414ae.js js/index-be5e8f96e5af21e414ae.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2573.6ms | Allocations: 3748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 147)
+Completed 200 OK in 2600ms (Views: 2597.0ms | ActiveRecord: 0.2ms | Allocations: 13019)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:19:24 +0100
+Processing by TransactionsController#index as JSON
+Started GET "/users" for ::1 at 2020-08-01 14:19:24 +0100
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Processing by UsersController#index as JSON
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 3.0ms | Allocations: 5242)
+
+
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 52ms (Views: 29.5ms | ActiveRecord: 18.6ms | Allocations: 13116)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:19:59 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: fabf71f8cbe57d3b32f0
+Version: webpack 4.44.1
+Time: 1161ms
+Built at: 08/01/2020 2:20:01 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-272263f3cc2f2901c4c4.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-272263f3cc2f2901c4c4.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-063233d22978fb6f7797.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-063233d22978fb6f7797.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-01045a1f2e32a504ec6e.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-01045a1f2e32a504ec6e.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-bfc5ffc6583f92f41cd0.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-bfc5ffc6583f92f41cd0.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-272263f3cc2f2901c4c4.js js/components/app-272263f3cc2f2901c4c4.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-063233d22978fb6f7797.js js/components/recent_transaction-063233d22978fb6f7797.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-01045a1f2e32a504ec6e.js js/components/recent_transactions-01045a1f2e32a504ec6e.js.map
+Entrypoint index = js/index-bfc5ffc6583f92f41cd0.js js/index-bfc5ffc6583f92f41cd0.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2594.9ms | Allocations: 3744)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 147)
+Completed 200 OK in 2614ms (Views: 2611.7ms | ActiveRecord: 0.1ms | Allocations: 13008)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:20:02 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Started GET "/users" for ::1 at 2020-08-01 14:20:02 +0100
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 12.5ms | ActiveRecord: 5.2ms | Allocations: 10455)
+
+
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 25ms (Views: 3.0ms | ActiveRecord: 16.9ms | Allocations: 7811)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:20:23 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: b0919d3468406949ec0c
+Version: webpack 4.44.1
+Time: 1165ms
+Built at: 08/01/2020 2:20:25 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-9da3cc2b148fe6f69a63.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-9da3cc2b148fe6f69a63.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-a208732704b04667c282.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-a208732704b04667c282.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-1a4da81541bf95408513.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-1a4da81541bf95408513.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-59bc95561dd7cff5f5bb.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-59bc95561dd7cff5f5bb.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-9da3cc2b148fe6f69a63.js js/components/app-9da3cc2b148fe6f69a63.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-a208732704b04667c282.js js/components/recent_transaction-a208732704b04667c282.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-1a4da81541bf95408513.js js/components/recent_transactions-1a4da81541bf95408513.js.map
+Entrypoint index = js/index-59bc95561dd7cff5f5bb.js js/index-59bc95561dd7cff5f5bb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2621.8ms | Allocations: 3745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2639ms (Views: 2636.6ms | ActiveRecord: 0.2ms | Allocations: 12882)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:20:26 +0100
+Processing by TransactionsController#index as JSON
+Started GET "/users" for ::1 at 2020-08-01 14:20:26 +0100
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Processing by UsersController#index as JSON
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 1.9ms | Allocations: 5219)
+
+
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 53ms (Views: 29.1ms | ActiveRecord: 19.4ms | Allocations: 13496)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:20:38 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 55db2c6c51251473715d
+Version: webpack 4.44.1
+Time: 1154ms
+Built at: 08/01/2020 2:20:41 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-6ae42c830cd7a842c7ea.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-6ae42c830cd7a842c7ea.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-c171f486a3f6d7727aed.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-c171f486a3f6d7727aed.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-0f69d1ecb1753a334d22.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-0f69d1ecb1753a334d22.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-3f841efdfd0ed3e426f0.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-3f841efdfd0ed3e426f0.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-6ae42c830cd7a842c7ea.js js/components/app-6ae42c830cd7a842c7ea.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-c171f486a3f6d7727aed.js js/components/recent_transaction-c171f486a3f6d7727aed.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-0f69d1ecb1753a334d22.js js/components/recent_transactions-0f69d1ecb1753a334d22.js.map
+Entrypoint index = js/index-3f841efdfd0ed3e426f0.js js/index-3f841efdfd0ed3e426f0.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2593.6ms | Allocations: 3742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 147)
+Completed 200 OK in 2612ms (Views: 2609.4ms | ActiveRecord: 0.2ms | Allocations: 13011)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:20:41 +0100
+Processing by TransactionsController#index as JSON
+Started GET "/users" for ::1 at 2020-08-01 14:20:41 +0100
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (15.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 23ms (Views: 3.2ms | ActiveRecord: 17.1ms | Allocations: 5783)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 51ms (Views: 27.2ms | ActiveRecord: 20.9ms | Allocations: 12700)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:21:47 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 945afb15ea04837a5236
+Version: webpack 4.44.1
+Time: 1187ms
+Built at: 08/01/2020 2:21:50 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-4de43de7c5945fe7f3aa.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-4de43de7c5945fe7f3aa.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-769dace74d0f48c1c151.js  85.2 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-769dace74d0f48c1c151.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-adeaee7e868eb10ccc9a.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-adeaee7e868eb10ccc9a.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-4de43de7c5945fe7f3aa.js js/components/app-4de43de7c5945fe7f3aa.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-769dace74d0f48c1c151.js js/components/recent_transactions-769dace74d0f48c1c151.js.map
+Entrypoint index = js/index-adeaee7e868eb10ccc9a.js js/index-adeaee7e868eb10ccc9a.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2652.4ms | Allocations: 3745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2676ms (Views: 2673.6ms | ActiveRecord: 0.1ms | Allocations: 13016)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:21:50 +0100
+Processing by TransactionsController#index as JSON
+Started GET "/users" for ::1 at 2020-08-01 14:21:50 +0100
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (1.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+Processing by UsersController#index as JSON
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 2.7ms | Allocations: 4584)
+
+
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 43ms (Views: 20.9ms | ActiveRecord: 17.4ms | Allocations: 12846)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:22:41 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 7e9f61586e9a2c685d1f
+Version: webpack 4.44.1
+Time: 1139ms
+Built at: 08/01/2020 2:22:44 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-7b8348cd2099ceb59e96.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-7b8348cd2099ceb59e96.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-ead1555cddf97b2075d0.js  85.2 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-ead1555cddf97b2075d0.js.map  92.1 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-1a2406aedca03d12ac48.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-1a2406aedca03d12ac48.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-7b8348cd2099ceb59e96.js js/components/app-7b8348cd2099ceb59e96.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js js/components/recent_transaction-2bbd1491a84a7ad8ff0d.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-ead1555cddf97b2075d0.js js/components/recent_transactions-ead1555cddf97b2075d0.js.map
+Entrypoint index = js/index-1a2406aedca03d12ac48.js js/index-1a2406aedca03d12ac48.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2605.5ms | Allocations: 3745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 147)
+Completed 200 OK in 2623ms (Views: 2620.6ms | ActiveRecord: 0.2ms | Allocations: 13027)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:22:44 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:22:44 +0100
+Processing by UsersController#index as JSON
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 3.7ms | Allocations: 5393)
+
+
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 2.4ms | Allocations: 10918)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:23:52 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 5d862e9479cc76fe95ba
+Version: webpack 4.44.1
+Time: 1366ms
+Built at: 08/01/2020 2:23:55 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-d7417df8862cbb257efb.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-d7417df8862cbb257efb.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-946be065183636da6396.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-946be065183636da6396.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-a7cb47fbd54b04d3cb1c.js  85.2 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-a7cb47fbd54b04d3cb1c.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-c42db57429fe56b8bf0b.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-c42db57429fe56b8bf0b.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-d7417df8862cbb257efb.js js/components/app-d7417df8862cbb257efb.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-946be065183636da6396.js js/components/recent_transaction-946be065183636da6396.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-a7cb47fbd54b04d3cb1c.js js/components/recent_transactions-a7cb47fbd54b04d3cb1c.js.map
+Entrypoint index = js/index-c42db57429fe56b8bf0b.js js/index-c42db57429fe56b8bf0b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2816.0ms | Allocations: 3742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 147)
+Completed 200 OK in 2843ms (Views: 2839.5ms | ActiveRecord: 0.1ms | Allocations: 12881)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:23:55 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Started GET "/users" for ::1 at 2020-08-01 14:23:55 +0100
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 32ms (Views: 21.6ms | ActiveRecord: 5.5ms | Allocations: 11137)
+
+
+Completed 200 OK in 16ms (Views: 6.3ms | ActiveRecord: 4.7ms | Allocations: 7029)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:25:00 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 046a33c9f6e108f2f036
+Version: webpack 4.44.1
+Time: 1143ms
+Built at: 08/01/2020 2:25:02 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-40fd256c069c2e9534a5.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-40fd256c069c2e9534a5.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-946be065183636da6396.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-946be065183636da6396.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-962b53b2fcd9dbbc74fa.js  85.2 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-962b53b2fcd9dbbc74fa.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-57e2f06fd4eea9660255.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-57e2f06fd4eea9660255.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-40fd256c069c2e9534a5.js js/components/app-40fd256c069c2e9534a5.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-946be065183636da6396.js js/components/recent_transaction-946be065183636da6396.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-962b53b2fcd9dbbc74fa.js js/components/recent_transactions-962b53b2fcd9dbbc74fa.js.map
+Entrypoint index = js/index-57e2f06fd4eea9660255.js js/index-57e2f06fd4eea9660255.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2621.7ms | Allocations: 3745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2645ms (Views: 2641.3ms | ActiveRecord: 0.2ms | Allocations: 13011)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:25:03 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:25:03 +0100
+Processing by UsersController#index as JSON
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 1.9ms | Allocations: 6660)
+
+
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 32ms (Views: 22.0ms | ActiveRecord: 6.7ms | Allocations: 11289)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:26:14 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 58051619c02463e2fb3c
+Version: webpack 4.44.1
+Time: 1175ms
+Built at: 08/01/2020 2:26:17 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-8925c31e5a944af221f2.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-8925c31e5a944af221f2.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-946be065183636da6396.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-946be065183636da6396.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-161113d0e00ac935c830.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-161113d0e00ac935c830.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-454ac01392a072a682f7.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-454ac01392a072a682f7.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-8925c31e5a944af221f2.js js/components/app-8925c31e5a944af221f2.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-946be065183636da6396.js js/components/recent_transaction-946be065183636da6396.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-161113d0e00ac935c830.js js/components/recent_transactions-161113d0e00ac935c830.js.map
+Entrypoint index = js/index-454ac01392a072a682f7.js js/index-454ac01392a072a682f7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2671.2ms | Allocations: 3742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2689ms (Views: 2686.5ms | ActiveRecord: 0.2ms | Allocations: 13010)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:26:17 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:26:17 +0100
+Processing by TransactionsController#index as JSON
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mTransaction Load (2.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 12.4ms | ActiveRecord: 6.2ms | Allocations: 6830)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 35ms (Views: 20.9ms | ActiveRecord: 9.4ms | Allocations: 11945)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:26:33 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: c482d98c52a0e2ea317e
+Version: webpack 4.44.1
+Time: 1143ms
+Built at: 08/01/2020 2:26:35 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-a93d7013afc3cc54188b.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-a93d7013afc3cc54188b.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-946be065183636da6396.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-946be065183636da6396.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-d576e76092b90ba7fa4a.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-d576e76092b90ba7fa4a.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-78a612d3186b24f4e898.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-78a612d3186b24f4e898.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-a93d7013afc3cc54188b.js js/components/app-a93d7013afc3cc54188b.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-946be065183636da6396.js js/components/recent_transaction-946be065183636da6396.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-d576e76092b90ba7fa4a.js js/components/recent_transactions-d576e76092b90ba7fa4a.js.map
+Entrypoint index = js/index-78a612d3186b24f4e898.js js/index-78a612d3186b24f4e898.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2619.0ms | Allocations: 3742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2636ms (Views: 2633.6ms | ActiveRecord: 0.2ms | Allocations: 12998)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:26:36 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:26:36 +0100
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Processing by UsersController#index as JSON
+  [1m[36mTransaction Load (2.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.8ms | Allocations: 5022)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 51ms (Views: 27.2ms | ActiveRecord: 19.0ms | Allocations: 12382)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:26:43 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: e46de4874b9b478f6fa0
+Version: webpack 4.44.1
+Time: 1100ms
+Built at: 08/01/2020 2:26:46 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-ebdd51812e8419772989.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-ebdd51812e8419772989.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-946be065183636da6396.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-946be065183636da6396.js.map  90.2 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-d576e76092b90ba7fa4a.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-d576e76092b90ba7fa4a.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-b25badaac98b872a5cda.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-b25badaac98b872a5cda.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-ebdd51812e8419772989.js js/components/app-ebdd51812e8419772989.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-946be065183636da6396.js js/components/recent_transaction-946be065183636da6396.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-d576e76092b90ba7fa4a.js js/components/recent_transactions-d576e76092b90ba7fa4a.js.map
+Entrypoint index = js/index-b25badaac98b872a5cda.js js/index-b25badaac98b872a5cda.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2570.7ms | Allocations: 3742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 147)
+Completed 200 OK in 2587ms (Views: 2584.2ms | ActiveRecord: 0.2ms | Allocations: 12881)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:26:46 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:26:46 +0100
+Processing by UsersController#index as JSON
+Processing by TransactionsController#index as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 3.4ms | Allocations: 6069)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 22.8ms | ActiveRecord: 3.8ms | Allocations: 11000)
+
+
+Started GET "/" for ::1 at 2020-08-01 14:27:06 +0100
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jonny/code/jonnymarshall/client_work/bambank/public/packs
+[Webpacker] Hash: 403d490d2636556d9131
+Version: webpack 4.44.1
+Time: 1187ms
+Built at: 08/01/2020 2:27:09 PM
+                                                        Asset      Size                          Chunks                         Chunk Names
+                       js/application-daaa8518228093590978.js   125 KiB                     application  [emitted] [immutable]  application
+                   js/application-daaa8518228093590978.js.map   140 KiB                     application  [emitted] [dev]        application
+                    js/components/app-21b40417684d28203638.js   162 KiB                  components/app  [emitted] [immutable]  components/app
+                js/components/app-21b40417684d28203638.js.map   142 KiB                  components/app  [emitted] [dev]        components/app
+                js/components/balance-5dad37d3cd832a94a805.js    80 KiB              components/balance  [emitted] [immutable]  components/balance
+            js/components/balance-5dad37d3cd832a94a805.js.map  89.6 KiB              components/balance  [emitted] [dev]        components/balance
+                 js/components/navbar-f3ff35c14bca055d8309.js  82.1 KiB               components/navbar  [emitted] [immutable]  components/navbar
+             js/components/navbar-f3ff35c14bca055d8309.js.map  90.4 KiB               components/navbar  [emitted] [dev]        components/navbar
+              js/components/new_payee-e39688929f31e78f47ce.js    83 KiB            components/new_payee  [emitted] [immutable]  components/new_payee
+          js/components/new_payee-e39688929f31e78f47ce.js.map  90.9 KiB            components/new_payee  [emitted] [dev]        components/new_payee
+            js/components/new_payment-3f715bb642b1b897ad83.js  92.3 KiB          components/new_payment  [emitted] [immutable]  components/new_payment
+        js/components/new_payment-3f715bb642b1b897ad83.js.map  95.5 KiB          components/new_payment  [emitted] [dev]        components/new_payment
+           js/components/notification-db196b6885f542d29f42.js  80.4 KiB         components/notification  [emitted] [immutable]  components/notification
+       js/components/notification-db196b6885f542d29f42.js.map  89.8 KiB         components/notification  [emitted] [dev]        components/notification
+                  js/components/payee-f95bc764b791c798a6c4.js  79.9 KiB                components/payee  [emitted] [immutable]  components/payee
+              js/components/payee-f95bc764b791c798a6c4.js.map  89.5 KiB                components/payee  [emitted] [dev]        components/payee
+                 js/components/payees-725046efde901c542bd8.js  82.5 KiB               components/payees  [emitted] [immutable]  components/payees
+             js/components/payees-725046efde901c542bd8.js.map  90.5 KiB               components/payees  [emitted] [dev]        components/payees
+     js/components/recent_transaction-cfef64de363763720e97.js  81.6 KiB   components/recent_transaction  [emitted] [immutable]  components/recent_transaction
+ js/components/recent_transaction-cfef64de363763720e97.js.map  90.1 KiB   components/recent_transaction  [emitted] [dev]        components/recent_transaction
+    js/components/recent_transactions-bca05931457e0a56ed83.js  85.1 KiB  components/recent_transactions  [emitted] [immutable]  components/recent_transactions
+js/components/recent_transactions-bca05931457e0a56ed83.js.map    92 KiB  components/recent_transactions  [emitted] [dev]        components/recent_transactions
+                             js/index-e90de7ec8c2d88799382.js   1.1 MiB                           index  [emitted] [immutable]  index
+                         js/index-e90de7ec8c2d88799382.js.map  1.23 MiB                           index  [emitted] [dev]        index
+                                                manifest.json  4.61 KiB                                  [emitted]              
+Entrypoint application = js/application-daaa8518228093590978.js js/application-daaa8518228093590978.js.map
+Entrypoint components/app = js/components/app-21b40417684d28203638.js js/components/app-21b40417684d28203638.js.map
+Entrypoint components/balance = js/components/balance-5dad37d3cd832a94a805.js js/components/balance-5dad37d3cd832a94a805.js.map
+Entrypoint components/navbar = js/components/navbar-f3ff35c14bca055d8309.js js/components/navbar-f3ff35c14bca055d8309.js.map
+Entrypoint components/new_payee = js/components/new_payee-e39688929f31e78f47ce.js js/components/new_payee-e39688929f31e78f47ce.js.map
+Entrypoint components/new_payment = js/components/new_payment-3f715bb642b1b897ad83.js js/components/new_payment-3f715bb642b1b897ad83.js.map
+Entrypoint components/notification = js/components/notification-db196b6885f542d29f42.js js/components/notification-db196b6885f542d29f42.js.map
+Entrypoint components/payee = js/components/payee-f95bc764b791c798a6c4.js js/components/payee-f95bc764b791c798a6c4.js.map
+Entrypoint components/payees = js/components/payees-725046efde901c542bd8.js js/components/payees-725046efde901c542bd8.js.map
+Entrypoint components/recent_transaction = js/components/recent_transaction-cfef64de363763720e97.js js/components/recent_transaction-cfef64de363763720e97.js.map
+Entrypoint components/recent_transactions = js/components/recent_transactions-bca05931457e0a56ed83.js js/components/recent_transactions-bca05931457e0a56ed83.js.map
+Entrypoint index = js/index-e90de7ec8c2d88799382.js js/index-e90de7ec8c2d88799382.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.49 KiB {application} [built]
+[./app/javascript/packs/index.jsx] 769 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 26 hidden modules
+
+  Rendered pages/index.html.erb within layouts/application (Duration: 2673.0ms | Allocations: 3754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 147)
+Completed 200 OK in 2692ms (Views: 2688.7ms | ActiveRecord: 0.2ms | Allocations: 13010)
+
+
+Started GET "/transactions" for ::1 at 2020-08-01 14:27:09 +0100
+Started GET "/users" for ::1 at 2020-08-01 14:27:09 +0100
+Processing by TransactionsController#index as JSON
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `all_users_excluding_current'
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE ("transactions"."sender_id" = $1 OR "transactions"."receiver_id" = $2)[0m  [["sender_id", 18], ["receiver_id", 18]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 18]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 1.3ms | Allocations: 6576)
+
+
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mUser Load (17.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:7:in `index'
+Completed 200 OK in 56ms (Views: 27.6ms | ActiveRecord: 24.4ms | Allocations: 11443)
+
+
+Started PATCH "/users" for ::1 at 2020-08-01 14:29:20 +0100
+Processing by Devise::RegistrationsController#update as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 3903)
+
+
+  
+NoMethodError (undefined method `to_key' for nil:NilClass
+Did you mean?  to_query):
+  
+devise (4.7.2) app/controllers/devise/registrations_controller.rb:47:in `update'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
