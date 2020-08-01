@@ -14,7 +14,8 @@ class App extends React.Component {
       routing: {
         csrfToken: null,
         paths: {
-          transactionsIndex: "/transactions"
+          transactionsIndex: "/transactions",
+          usersIndex: "/users"
         }
       },
       currentUser: {
@@ -23,54 +24,7 @@ class App extends React.Component {
         balance: 100.00,
         isFirstLogin: true
       },
-      payees: [{
-        id: 1,
-        firstName: "Bob",
-        email: "bob@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 2,
-        firstName: "Alice",
-        email: "alive@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 3,
-        firstName: "Tom",
-        email: "tom@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 4,
-        firstName: "Sarah",
-        email: "sarah@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 5,
-        firstName: "Bill",
-        email: "bill@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 6,
-        firstName: "Craig",
-        email: "craig@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 7,
-        firstName: "Jamal",
-        email: "jamal@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      },
-      {
-        id: 8,
-        firstName: "Jenna",
-        email: "jenna@example.com",
-        avatarUrl: "https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"
-      }],
+      payees: [],
       recentTransactions: [],
       selectedPayee: false,
       newPayeeSelected: false
@@ -80,6 +34,7 @@ class App extends React.Component {
   componentDidMount() {
     this.setState({csrfToken: document.head.querySelector("[name='csrf-token']").content})
     this.fetchTransactions()
+    this.fetchPayees()
     console.log(this.state)
   }
 
@@ -91,7 +46,32 @@ class App extends React.Component {
           .then((response) => response.json())
           .then((data) => {
             data.data.forEach((transaction) => {
-              this.setState({recentTransactions: [...this.state.recentTransactions, transaction.attributes]})
+              this.setState({recentTransactions: [...this.state.recentTransactions, {
+                amount: transaction.attributes.amount,
+                reference: transaction.attributes.reference,
+                createdAt: transaction.attributes.created_at,
+                receiverId: transaction.attributes.receiver.id,
+                senderId: transaction.attributes.sender.id,
+              }]})
+            })
+          })
+  }
+
+  async fetchPayees() {
+    await fetch(this.state.routing.paths.usersIndex,
+      {
+        method: "GET",
+        headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
+          .then((response) => response.json())
+          .then((data) => {
+            data.data.forEach((user) => {
+              this.setState({payees: [...this.state.payees, {
+                  id: user.attributes.id,
+                  firstName: user.attributes.first_name,
+                  email: user.attributes.email,
+                  avatarUrl: user.attributes.avatar_url
+                }]})
+              console.log(this.state.payees)
             })
           })
   }
@@ -125,8 +105,6 @@ class App extends React.Component {
       amount: parseInt(amount),
       reference
     }
-    console.log(newPayment)
-    this.cancelNewPayment()
   }
 
   render() {
@@ -138,6 +116,7 @@ class App extends React.Component {
     const toggleNewPayee = this.toggleNewPayee.bind(this)
     const createNewPayment = this.createNewPayment.bind(this)
     const currentUserId = this.state.currentUser.id
+
     return (
       <div className="App">
         {/* <Navbar/> */}
