@@ -27,7 +27,7 @@ class App extends React.Component {
       payees: [],
       recentTransactions: [],
       selectedPayee: false,
-      newPayeeSelected: false
+      // newPayeeSelected: false
     }
   }
 
@@ -98,7 +98,6 @@ class App extends React.Component {
   }
 
   selectPayee(payeeId) {
-    this.cancelNewPayee()
     if (this.state.selectedPayee === payeeId) {
       this.cancelNewPayment()
     } else {
@@ -108,15 +107,6 @@ class App extends React.Component {
 
   cancelNewPayment() {
     this.setState({ selectedPayee: null})
-  }
-
-  cancelNewPayee() {
-    this.setState({ newPayeeSelected: null})
-  }
-
-  toggleNewPayee() {
-    this.cancelNewPayment()
-    this.setState({ newPayeeSelected: !this.state.newPayeeSelected})
   }
 
   createNewPayment(recipientId, amount, reference) {
@@ -129,14 +119,12 @@ class App extends React.Component {
   }
 
   render() {
-    const { payees, recentTransactions, newPayeeSelected, selectedPayee, currentUser } = this.state
-    const { balance, isFirstLogin, first_name } = currentUser
+    const { payees, recentTransactions, selectedPayee, currentUser } = this.state
+    const { id, balance, isFirstLogin, first_name } = currentUser
     const payee = payees.find(payee => payee.id == selectedPayee )
     const selectPayee = this.selectPayee.bind(this)
     const cancelNewPayment = this.cancelNewPayment.bind(this)
-    const toggleNewPayee = this.toggleNewPayee.bind(this)
     const createNewPayment = this.createNewPayment.bind(this)
-    const currentUserId = currentUser.id
     const verifyFirstLogin = this.verifyFirstLogin.bind(this)
 
     return (
@@ -144,10 +132,9 @@ class App extends React.Component {
         {/* <Navbar/> */}
         <Balance balance={balance} />
         { isFirstLogin && <Notification name={first_name} onClick={verifyFirstLogin} /> }
-        { payees && <Payees payees={payees} selectPayee={selectPayee} toggleNewPayee={toggleNewPayee} /> }
-        { newPayeeSelected && <NewPayee onClick={toggleNewPayee} /> }
+        { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
-        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={currentUserId} /> }
+        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
       </div>
     )
   }
