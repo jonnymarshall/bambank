@@ -14,12 +14,12 @@ class App extends React.Component {
       routing: {
         csrfToken: null,
         paths: {
-          transactionsIndex: "/transactions",
+          transactions: "/transactions",
           users: "/users",
         }
       },
       currentUser: {
-        id: 0,
+        id: 10,
         firstName: "Jonny",
         balance: 100.00,
         isFirstLogin: true
@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   async fetchTransactions() {
-    await fetch(this.state.routing.paths.transactionsIndex,
+    await fetch(this.state.routing.paths.transactions,
       {
         method: "GET",
         headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
@@ -97,6 +97,29 @@ class App extends React.Component {
     this.setState.currentUser({ isFirstLogin: false})
   }
 
+  async makePaymentRequest(transactionDetails) {
+    const params = new URLSearchParams(transactionDetails).toString();
+    await fetch(this.state.routing.paths.transactions + "?" + params,
+      {
+        method: "POST",
+        headers: { accept: "application/json",
+          "X-CSRF-Token": this.state.routing.csrfToken }})
+          .then((response) => response.json())
+          .then((data) => {
+            debugger
+          //   data.data.forEach((user) => {
+          //     this.setState({payees: [...this.state.payees, {
+          //         id: user.attributes.id,
+          //         firstName: user.attributes.first_name,
+          //         email: user.attributes.email,
+          //         avatarUrl: user.attributes.avatar_url
+          //       }]})
+          //     console.log(this.state.payees)
+          //   })
+          })
+    this.setState.currentUser({ isFirstLogin: false})
+  }
+
   selectPayee(payeeId) {
     if (this.state.selectedPayee === payeeId) {
       this.cancelNewPayment()
@@ -109,13 +132,14 @@ class App extends React.Component {
     this.setState({ selectedPayee: null})
   }
 
-  createNewPayment(recipientId, amount, reference) {
-    const newPayment = {
+  createNewPayment(receiverId, amount, reference) {
+    const transactionDetails = {
       senderId: this.state.currentUser.id,
-      recipientId,
+      receiverId: receiverId,
       amount: parseInt(amount),
       reference
     }
+    this.makePaymentRequest(transactionDetails)
   }
 
   render() {

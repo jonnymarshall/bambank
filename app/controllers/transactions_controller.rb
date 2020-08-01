@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
 
   def index
@@ -7,7 +8,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    transaction = Transaction.new(transaction_params)
+    transaction = Transaction.new(parse_params_to_transaction(transaction_params))
     if transaction.save
       render json: TransactionSerializer.new(current_user.all_transactions)
     else
@@ -17,7 +18,17 @@ class TransactionsController < ApplicationController
 
   private
 
+  def parse_params_to_transaction(transaction_params)
+    byebug
+    {
+      sender: User.find(transaction_params[:senderId].to_i),
+      receiver: transaction_params[:senderId].to_i,
+      reference: transaction_params[:reference],
+      amount: transaction_params[:amount]
+    }
+  end
+
   def transaction_params
-    params.require(:transaction).permit(:sender, :receiver, :amount, :reference)
+    params.permit(:senderId, :receiverId, :reference, :amount)
   end
 end
