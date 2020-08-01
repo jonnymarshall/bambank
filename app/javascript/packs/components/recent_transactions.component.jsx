@@ -4,12 +4,21 @@ import RecentTransaction from './recent_transaction.component'
 const RecentTransactions = (props) => {
   const { recentTransactions, payees, currentUserId } = props
   const findPayeeById = (id) => payees.find((payee) => payee.id === id)
+  const checkIfCurrentUserIsSender = (recentTransaction) => { return recentTransaction.senderId === currentUserId }
+  const getPayee = async (recentTransaction, currentUserIsSender) => {
+    if (currentUserIsSender) {
+      return await findPayeeById(recentTransaction.receiverId)
+    } else {
+      return await findPayeeById(recentTransaction.senderId)
+    }
+  }
+  
 
   const getRecentTransaction = (recentTransaction, idx) => {
-    const currentUserIsSender = (recentTransaction.senderId == recentTransaction.currentUserId) ? true : false
-    const payee = currentUserIsSender ? findPayeeById(recentTransaction.receiverId) : findPayeeById(recentTransaction.senderId)
+    const currentUserIsSender = checkIfCurrentUserIsSender(recentTransaction)
+    const payee = getPayee(recentTransaction, currentUserIsSender)
 
-    return (payee) && <RecentTransaction
+    return payee && <RecentTransaction
       key={idx}
       id={recentTransaction.id}
       amount={recentTransaction.amount}
@@ -18,6 +27,7 @@ const RecentTransactions = (props) => {
       senderId={recentTransaction.senderId}
       receiverId={recentTransaction.receiverId}
       currentUserId={currentUserId}
+      currentUserIsSender={currentUserIsSender}
       payee={payee}
     />
   }

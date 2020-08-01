@@ -19,7 +19,7 @@ class App extends React.Component {
         }
       },
       currentUser: {
-        id: 10,
+        id: 20,
         firstName: "Jonny",
         balance: 100.00,
         isFirstLogin: true
@@ -27,7 +27,6 @@ class App extends React.Component {
       payees: [],
       recentTransactions: [],
       selectedPayee: false,
-      // newPayeeSelected: false
     }
   }
 
@@ -35,7 +34,6 @@ class App extends React.Component {
     this.setState({csrfToken: document.head.querySelector("[name='csrf-token']").content})
     this.fetchTransactions()
     this.fetchPayees()
-    console.log(this.state)
   }
 
   async fetchTransactions() {
@@ -46,13 +44,7 @@ class App extends React.Component {
           .then((response) => response.json())
           .then((data) => {
             data.data.forEach((transaction) => {
-              this.setState({recentTransactions: [...this.state.recentTransactions, {
-                amount: transaction.attributes.amount,
-                reference: transaction.attributes.reference,
-                createdAt: transaction.attributes.created_at,
-                receiverId: transaction.attributes.receiver.id,
-                senderId: transaction.attributes.sender.id,
-              }]})
+              this.setRecentTransactionState(transaction)
             })
           })
   }
@@ -71,7 +63,6 @@ class App extends React.Component {
                   email: user.attributes.email,
                   avatarUrl: user.attributes.avatar_url
                 }]})
-              console.log(this.state.payees)
             })
           })
   }
@@ -106,18 +97,20 @@ class App extends React.Component {
           "X-CSRF-Token": this.state.routing.csrfToken }})
           .then((response) => response.json())
           .then((data) => {
-            debugger
-          //   data.data.forEach((user) => {
-          //     this.setState({payees: [...this.state.payees, {
-          //         id: user.attributes.id,
-          //         firstName: user.attributes.first_name,
-          //         email: user.attributes.email,
-          //         avatarUrl: user.attributes.avatar_url
-          //       }]})
-          //     console.log(this.state.payees)
-          //   })
+            data.data.forEach((transaction) => {
+              this.setRecentTransactionState(transaction)
+            })
           })
-    this.setState.currentUser({ isFirstLogin: false})
+  }
+
+  setRecentTransactionState(transaction) {
+    this.setState({recentTransactions: [...this.state.recentTransactions, {
+      amount: transaction.attributes.amount,
+      reference: transaction.attributes.reference,
+      createdAt: transaction.attributes.created_at,
+      receiverId: transaction.attributes.receiver.id,
+      senderId: transaction.attributes.sender.id,
+    }]})
   }
 
   selectPayee(payeeId) {
@@ -144,7 +137,7 @@ class App extends React.Component {
 
   render() {
     const { payees, recentTransactions, selectedPayee, currentUser } = this.state
-    const { id, balance, isFirstLogin, first_name } = currentUser
+    const { id, balance, isFirstLogin, firstName } = currentUser
     const payee = payees.find(payee => payee.id == selectedPayee )
     const selectPayee = this.selectPayee.bind(this)
     const cancelNewPayment = this.cancelNewPayment.bind(this)
@@ -153,11 +146,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {/* <Navbar/> */}
         <Balance balance={balance} />
-        { isFirstLogin && <Notification name={first_name} onClick={verifyFirstLogin} /> }
+        { isFirstLogin && <Notification name={firstName} onClick={verifyFirstLogin} /> }
         { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
+        {/* { recentTransactions && recentTransactions.map((rt) => <div>{rt.amount}</div>) } */}
         { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
       </div>
     )
