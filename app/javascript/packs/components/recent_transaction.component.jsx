@@ -4,6 +4,9 @@ const RecentTransaction = (props) => {
   const { id, amount, date, reference, senderId, receiverId, currentUserId, findPayeeById } = props
   const currentUserIsSender = (senderId == currentUserId) ? true : false
   const payee = currentUserIsSender ? findPayeeById(receiverId) : findPayeeById(senderId)
+  console.log(currentUserIsSender)
+  console.log(senderId)
+  console.log(payee)
   
   return (
     <div className="column is-full is-flex c-transaction">

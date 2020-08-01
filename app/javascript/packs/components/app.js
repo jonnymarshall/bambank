@@ -15,19 +15,19 @@ class App extends React.Component {
         csrfToken: null,
         paths: {
           transactionsIndex: "/transactions",
-          usersIndex: "/users"
+          users: "/users",
         }
       },
       currentUser: {
         id: 0,
-        first_name: "Jonny",
+        firstName: "Jonny",
         balance: 100.00,
         isFirstLogin: true
       },
       payees: [],
       recentTransactions: [],
       selectedPayee: false,
-      newPayeeSelected: false
+      // newPayeeSelected: false
     }
   }
 
@@ -58,7 +58,7 @@ class App extends React.Component {
   }
 
   async fetchPayees() {
-    await fetch(this.state.routing.paths.usersIndex,
+    await fetch(this.state.routing.paths.users,
       {
         method: "GET",
         headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
@@ -76,8 +76,28 @@ class App extends React.Component {
           })
   }
 
+  async verifyFirstLogin() {
+    // call the api
+    await fetch(this.state.routing.paths.users,
+      {
+        method: "PATCH",
+        headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
+          .then((response) => response.json())
+          // .then((data) => {
+          //   data.data.forEach((user) => {
+          //     this.setState({payees: [...this.state.payees, {
+          //         id: user.attributes.id,
+          //         firstName: user.attributes.first_name,
+          //         email: user.attributes.email,
+          //         avatarUrl: user.attributes.avatar_url
+          //       }]})
+          //     console.log(this.state.payees)
+          //   })
+          // })
+    this.setState.currentUser({ isFirstLogin: false})
+  }
+
   selectPayee(payeeId) {
-    this.cancelNewPayee()
     if (this.state.selectedPayee === payeeId) {
       this.cancelNewPayment()
     } else {
@@ -87,15 +107,6 @@ class App extends React.Component {
 
   cancelNewPayment() {
     this.setState({ selectedPayee: null})
-  }
-
-  cancelNewPayee() {
-    this.setState({ newPayeeSelected: null})
-  }
-
-  toggleNewPayee() {
-    this.cancelNewPayment()
-    this.setState({ newPayeeSelected: !this.state.newPayeeSelected})
   }
 
   createNewPayment(recipientId, amount, reference) {
@@ -108,24 +119,22 @@ class App extends React.Component {
   }
 
   render() {
-    const { payees, recentTransactions, newPayeeSelected, selectedPayee } = this.state
-    const { balance, isFirstLogin, first_name } = this.state.currentUser
+    const { payees, recentTransactions, selectedPayee, currentUser } = this.state
+    const { id, balance, isFirstLogin, first_name } = currentUser
     const payee = payees.find(payee => payee.id == selectedPayee )
     const selectPayee = this.selectPayee.bind(this)
     const cancelNewPayment = this.cancelNewPayment.bind(this)
-    const toggleNewPayee = this.toggleNewPayee.bind(this)
     const createNewPayment = this.createNewPayment.bind(this)
-    const currentUserId = this.state.currentUser.id
+    const verifyFirstLogin = this.verifyFirstLogin.bind(this)
 
     return (
       <div className="App">
         {/* <Navbar/> */}
         <Balance balance={balance} />
-        { isFirstLogin && <Notification name={first_name} /> }
-        { payees && <Payees payees={payees} selectPayee={selectPayee} toggleNewPayee={toggleNewPayee} /> }
-        { newPayeeSelected && <NewPayee onClick={toggleNewPayee} /> }
+        { isFirstLogin && <Notification name={first_name} onClick={verifyFirstLogin} /> }
+        { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
-        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={currentUserId} /> }
+        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
       </div>
     )
   }

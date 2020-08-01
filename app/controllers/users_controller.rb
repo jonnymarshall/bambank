@@ -2,10 +2,11 @@
 
 class UsersController < ApplicationController
   # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update]
+  skip_before_action :verify_authenticity_token
+  protect_from_forgery with: :null_session
 
   def index
-    # byebug
     render json: UserSerializer.new(all_users_excluding_current)
   end
   
@@ -25,9 +26,9 @@ class UsersController < ApplicationController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -55,9 +56,9 @@ class UsersController < ApplicationController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_signin])
+  end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
