@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 
 const NewPayment = (props) => {
   const { onCancel, onSubmit, balance } = props
-  const { firstName, id } = props.payee
+  const { firstName, id, avatarUrl } = props.payee
   const [paymentAmountIsWithinBalance, setPaymentAmountIsWithinBalance] = useState(true)
   const [paymentAmountEntered, setPaymentAmountEntered] = useState(false)
   const [paymentAmount, setPaymentAmount] = useState(false)
@@ -25,7 +25,7 @@ const NewPayment = (props) => {
         <div className="field">
           <div className="user-details is-flex">
             <figure className="image is-64x64 c-transaction-c-contact--avatar">
-              <img className="is-rounded c-contact--avatar" src="https://i.pinimg.com/736x/0c/a0/33/0ca033247495682b657bed50ee0f6be1--guy-models-black-male-models.jpg"></img>
+              <img className="is-rounded c-contact--avatar" src={`${avatarUrl}`}></img>
             </figure>
             <div className="c-new-transfer--name">
               <label className="label">Name</label>

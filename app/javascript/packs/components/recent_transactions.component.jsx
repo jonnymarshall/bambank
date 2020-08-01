@@ -3,6 +3,7 @@ import RecentTransaction from './recent_transaction.component'
 
 const RecentTransactions = (props) => {
   const { recentTransactions, payees, currentUserId } = props
+  const findPayeeById = (id) => payees.find((payee) => payee.id === id)
 
   return (
     <section className="section">
@@ -14,10 +15,11 @@ const RecentTransactions = (props) => {
               key={recentTransaction.id}
               amount={recentTransaction.amount}
               reference={recentTransaction.reference}
-              date={recentTransaction.created_at.slice(0,10)}
-              sender={recentTransaction.sender}
-              receiver={recentTransaction.receiver}
+              date={recentTransaction.createdAt.slice(0,10)}
+              senderId={recentTransaction.senderId}
+              receiverId={recentTransaction.receiverId}
               currentUserId={currentUserId}
+              findPayeeById={findPayeeById.bind(this)}
             />)
           }
         </div>
