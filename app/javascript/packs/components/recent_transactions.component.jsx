@@ -10,7 +10,7 @@ const RecentTransactions = (props) => {
       <div className="container">
         <h1 className="title is-5">Recent transactions</h1>
         <div className="columns is-multiline">
-          { recentTransactions.map(recentTransaction =>
+          { recentTransactions && payees && recentTransactions.map(recentTransaction =>
             <RecentTransaction
               key={recentTransaction.id}
               amount={recentTransaction.amount}
