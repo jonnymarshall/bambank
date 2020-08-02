@@ -19,7 +19,7 @@ const RecentTransaction = (props) => {
       </div>
       <div className="c-transaction--details">
         <p>{date}</p>
-        <strong><p className={`${balanceAddMinusClass}`}>{balanceAddMinusSymbol}£{amount}</p></strong>
+        <strong><p className={`${balanceAddMinusClass}`}>{balanceAddMinusSymbol}₿{amount}</p></strong>
       </div>
     </div>
   )
