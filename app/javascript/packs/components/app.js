@@ -118,6 +118,7 @@ class App extends React.Component {
                     balance: prevState.currentUser.balance - transactionDetails.amount
                 }
             }))
+            this.deselectPayee()
           })
   }
 
@@ -146,13 +147,13 @@ class App extends React.Component {
 
   selectPayee(payeeId) {
     if (this.state.selectedPayee === payeeId) {
-      this.cancelNewPayment()
+      this.deselectPayee()
     } else {
       this.setState({ selectedPayee: payeeId})
     }
   }
 
-  cancelNewPayment() {
+  deselectPayee() {
     this.setState({ selectedPayee: null})
   }
 
@@ -171,7 +172,7 @@ class App extends React.Component {
     const { id, balance, firstSignin, firstName } = currentUser
     const payee = payees.find(payee => payee.id == selectedPayee )
     const selectPayee = this.selectPayee.bind(this)
-    const cancelNewPayment = this.cancelNewPayment.bind(this)
+    const deselectPayee = this.deselectPayee.bind(this)
     const createNewPayment = this.createNewPayment.bind(this)
     const verifyFirstLogin = this.verifyFirstLogin.bind(this)
 
@@ -180,7 +181,7 @@ class App extends React.Component {
         <Balance balance={balance} />
         { firstSignin && <Notification name={firstName} onClick={verifyFirstLogin} /> }
         { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
-        { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
+        { payee && <NewPayment payee={payee} onCancel={deselectPayee} onSubmit={createNewPayment} balance={balance} /> }
         { recentTransactions && payees && currentUser && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
       </div>
     )
