@@ -9,13 +9,13 @@ const RecentTransaction = (props) => {
   return (
     <div className="column is-full is-flex c-transaction">
       <figure className="image is-64x64 c-transaction-c-contact--avatar">
-        {/* <img className="is-rounded c-contact--avatar" src={`${payee.avatarUrl}`} /> */}
-        <img className="is-rounded c-contact--avatar" src={`${transactionThumbnail}`} />
+        <img className="is-rounded c-contact--avatar" src={`${payee.avatarUrl}`} />
+        {/* <img className="is-rounded c-contact--avatar" src={`${transactionThumbnail}`} /> */}
       </figure>
       <div className="c-transaction--name">
-        {/* <strong><p>{payee.firstName}</p></strong> */}
-        <strong><p>{reference}</p></strong>
-        {/* <p>{reference}</p> */}
+        <strong><p>{payee.firstName}</p></strong>
+        {/* <strong><p>{reference}</p></strong> */}
+        <p>{reference}</p>
       </div>
       <div className="c-transaction--details">
         <p>{date}</p>
