@@ -3,7 +3,7 @@ import React, { Component, useState } from 'react';
 const RecentTransaction = (props) => {
   const { id, amount, date, reference, senderId, receiverId, currentUserId, payee, currentUserIsSender } = props
   const transactionThumbnail = "https://png.pngtree.com/svg/20161230/483acea99c.png"
-  const balanceAddMinusClass = (currentUserIsSender) ? "has-text-danger" : ""
+  const balanceAddMinusClass = (currentUserIsSender) ? "has-text-danger" : "has-text-success"
   const balanceAddMinusSymbol = (currentUserIsSender) ? "-" : "+"
 
   return (
