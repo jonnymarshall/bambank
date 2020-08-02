@@ -48,13 +48,14 @@ const NewPayment = (props) => {
           <p className="control">
             <input className="input is-primary" type="number" placeholder="Amount (₿)" onKeyUp={(e) => handleAmountChange(e)} />
           </p>
+          {referenceEntered.length < 1 && paymentAmount > 0 && <p className="help is-danger">Please enter a reference</p>}
           {!paymentAmountIsWithinBalance && <p className="help is-danger">Balance too low!</p>}
         </div>
         
         <div className="field is-grouped">
           <div className="control">
             <button className="button is-primary"
-              disabled={!paymentAmountIsWithinBalance || !paymentAmountEntered}
+              disabled={!paymentAmountIsWithinBalance || !paymentAmountEntered || referenceEntered.length < 1}
               onClick={() => onSubmit(id, paymentAmount, referenceEntered)}>
               Transfer
             </button>
