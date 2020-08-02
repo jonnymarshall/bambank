@@ -67,11 +67,11 @@ User.create([
   }
 ])
 
-Transaction.create([
-  {
-    sender: User.find_by(email: "sarah@example.com"),
-    receiver: User.find_by(email: "john@example.com"),
-    amount: 10.00,
-    reference: "party"
-  }
-])
+# Transaction.create([
+#   {
+#     sender: User.find_by(email: "sarah@example.com"),
+#     receiver: User.find_by(email: "john@example.com"),
+#     amount: 10.00,
+#     reference: "party"
+#   }
+# ])
