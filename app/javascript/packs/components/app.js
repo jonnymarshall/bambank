@@ -91,11 +91,10 @@ class App extends React.Component {
         headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
           .then((response) => response.json())
           .then((data) => {
-            console.log(data)
             this.setState(prevState => ({
               currentUser: {
                     ...prevState.currentUser,
-                    isFirstSignin: data.data.attributes.first_signin
+                    firstSignin: data.data.attributes.first_signin
                 }
             }))
           })

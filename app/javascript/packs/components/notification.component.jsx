@@ -4,7 +4,7 @@ const Notification = ({name, onClick}) => {
   return(
     <section className="section">
       <div className="container">
-        <div className="notification is-primary">
+        <div className="notification is-success">
           <button className="delete" onClick={() => onClick()}></button>
           <strong>Welcome, {name}!</strong>
           <br></br>
