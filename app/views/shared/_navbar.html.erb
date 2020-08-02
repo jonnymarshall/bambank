@@ -16,7 +16,7 @@
   <div id="navMenu" class="navbar-menu">
     <div class="navbar-end">
       <% if user_signed_in? %>
-        <%= link_to "Account Settings", edit_user_registration_path, class: "navbar-item heading is-size-6-touch" %>
+        <%#= link_to "Account Settings", edit_user_registration_path, class: "navbar-item heading is-size-6-touch" %>
         <%= link_to "Log Out", destroy_user_session_path, id: "logout-button",class: "navbar-item heading is-size-6-touch", method: :delete %>
       <% else %>
         <div class="navbar-item heading is-size-6-touch">
