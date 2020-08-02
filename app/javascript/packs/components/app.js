@@ -54,14 +54,6 @@ class App extends React.Component {
           .then((response) => response.json())
           .then((data) => {
             data.data.forEach((user) => {
-              // if (i == 1) {
-              //   this.setState({currentUser: {
-              //     id: user.attributes.id,
-              //     firstName: user.attributes.first_name,
-              //     email: user.attributes.email,
-              //     avatarUrl: user.attributes.avatar_url
-              //   }})
-              // } else {
               this.setState({payees: [...this.state.payees, {
                   id: user.attributes.id,
                   firstName: user.attributes.first_name,
@@ -85,13 +77,14 @@ class App extends React.Component {
               firstName: user.data.attributes.first_name,
               email: user.data.attributes.email,
               avatarUrl: user.data.attributes.avatar_url,
-              balance: user.data.attributes.balance
+              balance: user.data.attributes.balance,
+              firstSignin: user.data.attributes.first_signin,
             }})
           })
   }
 
+  // Updates the user's first_signin boolean on dismissal of bonus notification
   async verifyFirstLogin() {
-    // call the api
     await fetch(this.state.routing.paths.users,
       {
         method: "PATCH",
@@ -102,7 +95,7 @@ class App extends React.Component {
             this.setState(prevState => ({
               currentUser: {
                     ...prevState.currentUser,
-                    isFirstLogin: data.data.attributes.first_signin
+                    isFirstSignin: data.data.attributes.first_signin
                 }
             }))
           })
@@ -176,7 +169,7 @@ class App extends React.Component {
 
   render() {
     const { payees, recentTransactions, selectedPayee, currentUser } = this.state
-    const { id, balance, isFirstLogin, firstName } = currentUser
+    const { id, balance, firstSignin, firstName } = currentUser
     const payee = payees.find(payee => payee.id == selectedPayee )
     const selectPayee = this.selectPayee.bind(this)
     const cancelNewPayment = this.cancelNewPayment.bind(this)
@@ -186,7 +179,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Balance balance={balance} />
-        { isFirstLogin && <Notification name={firstName} onClick={verifyFirstLogin} /> }
+        { firstSignin && <Notification name={firstName} onClick={verifyFirstLogin} /> }
         { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
         { recentTransactions && payees && currentUser && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }

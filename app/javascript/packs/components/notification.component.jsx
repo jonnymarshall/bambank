@@ -8,7 +8,7 @@ const Notification = ({name, onClick}) => {
           <button className="delete" onClick={() => onClick()}></button>
           <strong>Welcome, {name}!</strong>
           <br></br>
-          Thanks for signing up to Bambeauros. As a reward for signing up, we've credited your account with 100 free Bambeuros. Don't spend them all at once!
+          Thanks for signing up to Bambeuros. As a reward for signing up, we've credited your account with 100 free Bambeuros. Don't spend them all at once!
         </div>
       </div>
     </section>

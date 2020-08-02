@@ -9,7 +9,7 @@ class UsersController < ActionController::API
   end
 
   def show
-    render json: UserSerializer.new(current_user)
+    render json: UserSerializer.new(current_user) 
   end
   
   # GET /resource/sign_up
