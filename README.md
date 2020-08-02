@@ -33,13 +33,13 @@ In the browser navigate to:
 The app uses a very basic two table database structure of Users and Transactions. Focus has been put on front end design and interaction.
 
 ## A user of the app DOES:
-Have the ability to send and receive payments to other users.
-Receive a bonus of 100 Bambeuros.
+- Have the ability to send and receive payments to other users.
+- Receive a bonus of 100 Bambeuros.
 
 ## A user of the app DOES NOT:
-Have the ability to create a custom contact list (all Bambeuro users are listed as payees).
-Have the ability to edit their account details after initial signup.
-Have the ability to add to their balance (or withdraw their balance)
+- Have the ability to create a custom contact list (all Bambeuro users are listed as payees).
+- Have the ability to edit their account details after initial signup.
+- Have the ability to add to their balance (or withdraw their balance)
 
 ## Testing:
 As the backend has been kept very basic, there are currently no tests for the application.
