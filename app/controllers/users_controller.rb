@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < ActionController::API
   # before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
-  skip_before_action :verify_authenticity_token
-  protect_from_forgery with: :null_session
 
   def index
     render json: UserSerializer.new(all_users_excluding_current)
+  end
+
+  def show
+    render json: UserSerializer.new(current_user)
   end
   
   # GET /resource/sign_up
@@ -26,9 +28,9 @@ class UsersController < ApplicationController
   # end
 
   # PUT /resource
-  def update
-    super
-  end
+  # def update
+  #   super
+  # end
 
   # DELETE /resource
   # def destroy

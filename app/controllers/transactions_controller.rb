@@ -10,7 +10,7 @@ class TransactionsController < ApplicationController
   def create
     transaction = Transaction.new(parse_params_to_transaction(transaction_params))
     if transaction.save
-      render json: TransactionSerializer.new(current_user.all_transactions)
+      render json: TransactionSerializer.new(transaction)
     else
       render json: { error: transaction.errors.messages }, status: 422
     end
@@ -21,7 +21,7 @@ class TransactionsController < ApplicationController
   def parse_params_to_transaction(transaction_params)
     {
       sender: User.find(transaction_params[:senderId].to_i),
-      receiver: User.find(transaction_params[:senderId].to_i),
+      receiver: User.find(transaction_params[:receiverId].to_i),
       reference: transaction_params[:reference],
       amount: transaction_params[:amount]
     }
