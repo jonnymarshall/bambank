@@ -1,10 +1,11 @@
 # Bambank
-
 An online bank, Bambank, allowing users to send and receive Bambeuros, Bambank's native currency, to one another.
 The app is built using Ruby on Rails with a React front end and is fully responsive.
 
+
 # Ruby Version
 Tested with ruby 2.7.1
+
 
 # Installation
 
@@ -28,6 +29,21 @@ Serve app:
 
 In the browser navigate to:
 ```http://localhost:3000```
+
+
+# Methods
+Return all transactions for given user:
+```Transaction.for_user(user)```
+
+This also be called from the user:
+```user.all_transactions```
+
+Only transactions for which user is the sender:
+```user.sender_transactions```
+
+Only transactions for which user is the receiver:
+```user.receiver_transactions```
+
 
 # Notes
 The app uses a very basic two table database structure of Users and Transactions. Focus has been put on front end design and interaction.
