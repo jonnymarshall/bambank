@@ -16,14 +16,10 @@ class App extends React.Component {
         paths: {
           transactions: "/transactions",
           users: "/users",
+          usersShow: "/users/show"
         }
       },
-      currentUser: {
-        id: 20,
-        firstName: "Jonny",
-        balance: 100.00,
-        isFirstLogin: true
-      },
+      currentUser: {},
       payees: [],
       recentTransactions: [],
       selectedPayee: false,
@@ -32,8 +28,9 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({csrfToken: document.head.querySelector("[name='csrf-token']").content})
+    this.fetchCurrentUser()
     this.fetchTransactions()
-    this.fetchPayees()
+    this.fetchUsers()
   }
 
   async fetchTransactions() {
@@ -49,7 +46,7 @@ class App extends React.Component {
           })
   }
 
-  async fetchPayees() {
+  async fetchUsers() {
     await fetch(this.state.routing.paths.users,
       {
         method: "GET",
@@ -57,13 +54,39 @@ class App extends React.Component {
           .then((response) => response.json())
           .then((data) => {
             data.data.forEach((user) => {
+              // if (i == 1) {
+              //   this.setState({currentUser: {
+              //     id: user.attributes.id,
+              //     firstName: user.attributes.first_name,
+              //     email: user.attributes.email,
+              //     avatarUrl: user.attributes.avatar_url
+              //   }})
+              // } else {
               this.setState({payees: [...this.state.payees, {
                   id: user.attributes.id,
                   firstName: user.attributes.first_name,
                   email: user.attributes.email,
                   avatarUrl: user.attributes.avatar_url
                 }]})
+              // }
             })
+          })
+  }
+
+  async fetchCurrentUser() {
+    await fetch(this.state.routing.paths.usersShow,
+      {
+        method: "GET",
+        headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
+          .then((response) => response.json())
+          .then((user) => {
+            this.setState({currentUser: {
+              id: user.data.attributes.id,
+              firstName: user.data.attributes.first_name,
+              email: user.data.attributes.email,
+              avatarUrl: user.data.attributes.avatar_url,
+              balance: user.data.attributes.balance
+            }})
           })
   }
 
@@ -74,18 +97,15 @@ class App extends React.Component {
         method: "PATCH",
         headers: { accept: "application/json", "X-CSRF-Token": this.state.routing.csrfToken }})
           .then((response) => response.json())
-          // .then((data) => {
-          //   data.data.forEach((user) => {
-          //     this.setState({payees: [...this.state.payees, {
-          //         id: user.attributes.id,
-          //         firstName: user.attributes.first_name,
-          //         email: user.attributes.email,
-          //         avatarUrl: user.attributes.avatar_url
-          //       }]})
-          //     console.log(this.state.payees)
-          //   })
-          // })
-    this.setState.currentUser({ isFirstLogin: false})
+          .then((data) => {
+            console.log(data)
+            this.setState(prevState => ({
+              currentUser: {
+                    ...prevState.currentUser,
+                    isFirstLogin: data.data.attributes.first_signin
+                }
+            }))
+          })
   }
 
   async makePaymentRequest(transactionDetails) {
@@ -97,9 +117,14 @@ class App extends React.Component {
           "X-CSRF-Token": this.state.routing.csrfToken }})
           .then((response) => response.json())
           .then((data) => {
-            data.data.forEach((transaction) => {
-              this.setRecentTransactionState(transaction)
-            })
+            this.setRecentTransactionState(data.data)
+            // Update currentUser's balance
+            this.setState(prevState => ({
+              currentUser: {
+                    ...prevState.currentUser,
+                    balance: prevState.currentUser.balance - transactionDetails.amount
+                }
+            }))
           })
   }
 
@@ -151,7 +176,7 @@ class App extends React.Component {
         { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
         {/* { recentTransactions && recentTransactions.map((rt) => <div>{rt.amount}</div>) } */}
-        { recentTransactions && payees && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
+        { recentTransactions && payees && currentUser && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
       </div>
     )
   }
