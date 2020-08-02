@@ -3,7 +3,8 @@ import React, { Component, useState } from 'react';
 const RecentTransaction = (props) => {
   const { id, amount, date, reference, senderId, receiverId, currentUserId, payee, currentUserIsSender } = props
   const transactionThumbnail = "https://png.pngtree.com/svg/20161230/483acea99c.png"
-  const balanceAddMinus = (currentUserIsSender) ? "-" : "+"
+  const balanceAddMinusClass = (currentUserIsSender) ? "has-text-danger" : ""
+  const balanceAddMinusSymbol = (currentUserIsSender) ? "-" : "+"
 
   return (
     <div className="column is-full is-flex c-transaction">
@@ -18,7 +19,7 @@ const RecentTransaction = (props) => {
       </div>
       <div className="c-transaction--details">
         <p>{date}</p>
-        <strong><p>{balanceAddMinus}{amount}</p></strong>
+        <strong><p className={`${balanceAddMinusClass}`}>{balanceAddMinusSymbol}£{amount}</p></strong>
       </div>
     </div>
   )
