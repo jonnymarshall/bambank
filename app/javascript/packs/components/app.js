@@ -117,7 +117,8 @@ class App extends React.Component {
           "X-CSRF-Token": this.state.routing.csrfToken }})
           .then((response) => response.json())
           .then((data) => {
-            this.setRecentTransactionState(data.data)
+            // Add transaction to recentTransactions
+            this.setRecentTransactionState(data.data, "end")
             // Update currentUser's balance
             this.setState(prevState => ({
               currentUser: {
@@ -128,14 +129,27 @@ class App extends React.Component {
           })
   }
 
-  setRecentTransactionState(transaction) {
-    this.setState({recentTransactions: [...this.state.recentTransactions, {
-      amount: transaction.attributes.amount,
-      reference: transaction.attributes.reference,
-      createdAt: transaction.attributes.created_at,
-      receiverId: transaction.attributes.receiver.id,
-      senderId: transaction.attributes.sender.id,
-    }]})
+  setRecentTransactionState(transaction, position = "start") {
+    // Add to start of array if transaction is addded
+    if (position === "end") {
+      this.setState({recentTransactions: [{
+        amount: transaction.attributes.amount,
+        reference: transaction.attributes.reference,
+        createdAt: transaction.attributes.created_at,
+        receiverId: transaction.attributes.receiver.id,
+        senderId: transaction.attributes.sender.id,
+      }, ...this.state.recentTransactions]})
+    } else {
+       // Add to end of array if fetching from server
+      this.setState({recentTransactions: [...this.state.recentTransactions, {
+        amount: transaction.attributes.amount,
+        reference: transaction.attributes.reference,
+        createdAt: transaction.attributes.created_at,
+        receiverId: transaction.attributes.receiver.id,
+        senderId: transaction.attributes.sender.id,
+      }]})
+    }
+    
   }
 
   selectPayee(payeeId) {
@@ -175,7 +189,6 @@ class App extends React.Component {
         { isFirstLogin && <Notification name={firstName} onClick={verifyFirstLogin} /> }
         { payees && <Payees payees={payees} selectPayee={selectPayee} /> }
         { payee && <NewPayment payee={payee} onCancel={cancelNewPayment} onSubmit={createNewPayment} balance={balance} /> }
-        {/* { recentTransactions && recentTransactions.map((rt) => <div>{rt.amount}</div>) } */}
         { recentTransactions && payees && currentUser && <RecentTransactions recentTransactions={recentTransactions} payees={payees} currentUserId={id} /> }
       </div>
     )
